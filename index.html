@@ -232,7 +232,7 @@
                             <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Şirkət daxilində fişinq e-poçtlarına qarşı həssaslığın ölçülməsi və əməkdaşların təhlükəsiz davranış vərdişlərinin artırılması.
                         </p>
                         <p>
-                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> RHEL mühitində <span class="text-white font-medium">Postfix</span> mail serveri və <span class="text-white font-medium">GoPhish</span> qurulmaqla simulasiya kampaniyası keçirildi[cite: 11, 12]. Ardından 12 slaydlıq maarifləndirici təqdimat hazırlanaraq domen yoxlanışı, şifrə siyasəti, MFA və insidentlərin bildirilməsi izah olundu[cite: 16].
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> RHEL mühitində <span class="text-white font-medium">Postfix</span> mail serveri və <span class="text-white font-medium">GoPhish</span> qurulmaqla simulasiya kampaniyası keçirildi. Ardından 12 slaydlıq maarifləndirici təqdimat hazırlanaraq domen yoxlanışı, şifrə siyasəti, MFA və insidentlərin bildirilməsi izah olundu.
                         </p>
                     </div>
 
@@ -294,7 +294,7 @@
                             <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Şöbələr üzrə istifadəçi və cihaz idarəetməsinin sistemləşdirilməsi, icazəsiz USB/CMD/PowerShell istifadəsinin məhdudlaşdırılması.
                         </p>
                         <p>
-                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-mono text-xs">Credit, Finance, HR, IT, PK, RISK, PC, SERVER</span> OU strukturu quruldu; <span class="text-white font-mono text-xs">USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, PASSWORD_POLICY, WALLPAPER, LOCKSCREEN</span> GPO-ları tətbiq edildi[cite: 13, 14, 15].
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-mono text-xs">Credit, Finance, HR, IT, PK, RISK, PC, SERVER</span> OU strukturu quruldu; <span class="text-white font-mono text-xs">USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, PASSWORD_POLICY, WALLPAPER, LOCKSCREEN</span> GPO-ları tətbiq edildi.
                         </p>
                     </div>
 
@@ -343,20 +343,20 @@
 
                     <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Lokal veb xidmətlərin və tətbiqlərin izolyasiyalı işlədilməsi və mərkəzləşdirilmiş şəkildə yönləndirilməsi.
+                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Bulud mühitində veb tətbiqin Docker konteynerində izolyasiyalı işlədilməsi, DNS/SSL sazlamaları və NGINX vasitəsilə domen üzərindən nəşri[cite: 15, 17, 20, 21, 22].
                         </p>
                         <p>
-                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Xidmətlər <span class="text-white font-medium">Docker</span> üzərində yerləşdirildi və qarşısında <span class="text-white font-medium">NGINX Reverse Proxy</span> konfiqurasiya edilərək trafikin daxili servislərə səliqəli ötürülməsi təmin olundu.
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Azure-da <span class="text-white font-medium">Docker</span> və <span class="text-white font-medium">NGINX</span> VM-ləri ayrıldı, <span class="text-white font-mono text-xs">docker compose up -d</span> ilə konteyner başladıldı, DNS <span class="text-white font-mono text-xs">A</span> qeydi və <span class="text-white font-medium">Cloudflare</span> SSL/TLS qoruması ilə <span class="text-white font-mono text-xs">gridx.digital</span> canlıya çıxarıldı[cite: 15, 17, 19, 20, 21].
                         </p>
                     </div>
 
                     <div class="mt-5 p-4 rounded-xl bg-[#090d16] border border-slate-800/90 font-mono text-xs">
-                        <div class="flex items-center justify-between gap-2 text-[11px] text-center">
-                            <span class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-700 text-slate-300">Client / Request</span>
+                        <div class="flex items-center justify-between gap-2 text-[11px] text-center flex-wrap">
+                            <span class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-700 text-slate-300">Cloudflare SSL</span>
                             <i class="fa-solid fa-arrow-right text-cyan-500"></i>
-                            <span class="px-2.5 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">NGINX Proxy</span>
+                            <span class="px-2.5 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">NGINX (52.184.80.189)</span>
                             <i class="fa-solid fa-arrow-right text-cyan-500"></i>
-                            <span class="px-2.5 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">Docker Services</span>
+                            <span class="px-2.5 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">Docker (20.187.144.155)</span>
                         </div>
                     </div>
                 </div>
@@ -365,10 +365,10 @@
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
                         <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Docker</span>
                         <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">NGINX</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">IIS</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Cloudflare &amp; DNS</span>
                     </div>
                     <button onclick="openCaseModal('case3')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
-                        <span>Texniki Detallar</span>
+                        <span>Texniki Detallar &amp; Sübutlar</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
                 </div>
@@ -668,7 +668,7 @@
 
     <!-- CASE MODAL -->
     <div id="caseModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-[#0e1523] border border-slate-700 rounded-2xl max-w-3xl w-full p-6 sm:p-7 relative shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
+        <div class="bg-[#0e1523] border border-slate-700 rounded-2xl max-w-4xl w-full p-6 sm:p-7 relative shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
             <button onclick="closeCaseModal()" class="sticky top-0 float-right z-10 w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
@@ -787,50 +787,85 @@
             case1: `
                 <div class="text-xs font-mono text-rose-400">CASE #01 • SECURITY AWARENESS &amp; POSTFIX</div>
                 <h3 class="text-2xl font-bold text-white">GoPhish + Postfix Simulasiyası və Maarifləndirmə</h3>
-                <p>RHEL üzərində Postfix mail serveri və GoPhish qurulmaqla kampaniya keçirilib, ardınca 12 slaydlıq maarifləndirici təqdimat hazırlanıb[cite: 11, 12, 16].</p>
+                <p>RHEL üzərində Postfix mail serveri və GoPhish qurulmaqla kampaniya keçirilib, ardınca 12 slaydlıq maarifləndirici təqdimat hazırlanıb.</p>
 
                 <div class="p-3.5 rounded-xl bg-[#090d16] border border-slate-800 space-y-1.5 text-xs text-slate-300">
                     <div class="font-mono text-cyan-400 font-semibold">12 Slaydlıq Təlim Xülasəsi:</div>
-                    <div>• Rəsmi domen vs saxta/IP keçidlərin yoxlanılması (linkə klikləmədən əvvəl ünvanın analiz edilməsi)[cite: 16]</div>
-                    <div>• HTTP (şifrələnməmiş) və HTTPS (SSL/TLS) bağlantılarının fərqi[cite: 16]</div>
-                    <div>• Unikal şifrə, MFA, iş cihazının kilidlənməsi və şübhəli halın dərhal İT-yə bildirilməsi[cite: 16]</div>
+                    <div>• Rəsmi domen vs saxta/IP keçidlərin yoxlanılması (linkə klikləmədən əvvəl ünvanın analiz edilməsi)</div>
+                    <div>• HTTP (şifrələnməmiş) və HTTPS (SSL/TLS) bağlantılarının fərqi</div>
+                    <div>• Unikal şifrə, MFA, iş cihazının kilidlənməsi və şübhəli halın dərhal İT-yə bildirilməsi</div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
                     <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2.5">
                         <img src="Screenshot%20(2494).png" alt="GoPhish Dashboard" onclick="openLightbox('Screenshot%20(2494).png', 'GoPhish Dashboard — Kampaniya statistikası')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
-                        <div class="mt-2 text-xs font-mono text-slate-400">GoPhish Dashboard (5 Sent, 4 Opened, 4 Clicked)[cite: 11]</div>
+                        <div class="mt-2 text-xs font-mono text-slate-400">GoPhish Dashboard (5 Sent, 4 Opened, 4 Clicked)</div>
                     </div>
                     <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2.5">
                         <img src="Screenshot%20(2495).jpg" alt="Postfix Service Status" onclick="openLightbox('Screenshot%20(2495).jpg', 'RHEL — systemctl status postfix.service')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
-                        <div class="mt-2 text-xs font-mono text-slate-400">Postfix Mail Transport Agent — active (running)[cite: 12]</div>
+                        <div class="mt-2 text-xs font-mono text-slate-400">Postfix Mail Transport Agent — active (running)</div>
                     </div>
                 </div>
             `,
             case2: `
                 <div class="text-xs font-mono text-cyan-400">CASE #02 • ACTIVE DIRECTORY &amp; GPO</div>
                 <h3 class="text-2xl font-bold text-white">AD OU Strukturu və Group Policy Hardening</h3>
-                <p>Credit, Finance, HR, IT, PK, RISK, PC və SERVER OU-ları üzrə GPO-lar sazlanıb; şifrə siyasəti, korporativ Lockscreen/Wallpaper və USB məhdudiyyəti tətbiq edilib[cite: 13, 14, 15].</p>
+                <p>Credit, Finance, HR, IT, PK, RISK, PC və SERVER OU-ları üzrə GPO-lar sazlanıb; şifrə siyasəti, korporativ Lockscreen/Wallpaper və USB məhdudiyyəti tətbiq edilib.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
                     <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2.5">
                         <img src="Lockscreen_2.png" alt="Korporativ Lockscreen Şifrə Siyasəti" onclick="openLightbox('Lockscreen_2.png', 'LOCKSCREEN GPO — Şifrə siyasəti və dəstək nömrəsi')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
-                        <div class="mt-2 text-[11px] font-mono text-slate-400">Lockscreen (Şifrə siyasəti + Dəstək)[cite: 13]</div>
+                        <div class="mt-2 text-[11px] font-mono text-slate-400">Lockscreen (Şifrə siyasəti + Dəstək)</div>
                     </div>
                     <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2.5">
                         <img src="image_a6d22d.jpg" alt="Korporativ Desktop Wallpaper" onclick="openLightbox('image_a6d22d.jpg', 'WALLPAPER GPO — İşçi stansiyası fonu')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
-                        <div class="mt-2 text-[11px] font-mono text-slate-400">Desktop Wallpaper GPO[cite: 14]</div>
+                        <div class="mt-2 text-[11px] font-mono text-slate-400">Desktop Wallpaper GPO</div>
                     </div>
                     <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2.5">
                         <img src="image_a6d247.jpg" alt="USB Block Siyasəti" onclick="openLightbox('image_a6d247.jpg', 'USB_BLOCK GPO — Removable Disk məhdudiyyəti')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
-                        <div class="mt-2 text-[11px] font-mono text-slate-400">USB_BLOCK Siyasəti[cite: 15]</div>
+                        <div class="mt-2 text-[11px] font-mono text-slate-400">USB_BLOCK Siyasəti</div>
                     </div>
                 </div>
             `,
             case3: `
-                <div class="text-xs font-mono text-emerald-400">CASE #03 • DOCKER &amp; NGINX</div>
-                <h3 class="text-2xl font-bold text-white">Docker Konteynerləri və NGINX Reverse Proxy</h3>
-                <p>Lokal xidmətlər Docker konteynerlərində izolyasiya olunaraq NGINX Reverse Proxy vasitəsilə yönləndirilib.</p>
+                <div class="text-xs font-mono text-emerald-400">CASE #03 • DOCKER, NGINX, DNS &amp; CLOUDFLARE</div>
+                <h3 class="text-2xl font-bold text-white">Docker Konteynerləri, NGINX və Domen/SSL Sazlanması</h3>
+                <p>Azure Linux VM-ləri üzərində Docker konteyneri və NGINX sazlanıb, DNS A qeydi və Cloudflare SSL/TLS sertifikatı ilə sayt canlıya çıxarılıb.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="1.png" alt="Azure Virtual Machines — Docker and NGINX" onclick="openLightbox('1.png', 'Azure VMs — Docker (20.187.144.155) və NGINX (52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">Azure Docker &amp; NGINX VM-lər</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="2.jpg" alt="systemctl status docker" onclick="openLightbox('2.jpg', 'systemctl enable --now docker &amp; status docker')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">Docker servisi (active)</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="3.png" alt="docker compose up -d" onclick="openLightbox('3.png', 'docker compose up -d — apache_container')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">Docker Compose deployment</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="4.png" alt="curl http://20.187.144.155" onclick="openLightbox('4.png', 'curl http://20.187.144.155 HTML cavabı')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">curl cavab testi</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="6.png" alt="GoDaddy DNS A Record" onclick="openLightbox('6.png', 'DNS A qeydi (@ -> 52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">DNS A qeydi (NGINX IP)</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="7.png" alt="Cloudflare SSL/TLS Edge Certificates" onclick="openLightbox('7.png', 'Cloudflare Universal SSL sertifikatı')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">Cloudflare SSL/TLS</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="5.jpg" alt="https://gridx.digital" onclick="openLightbox('5.jpg', 'Canlı sayt — https://gridx.digital')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">Canlı domen (HTTPS)</div>
+                    </div>
+                    <div class="rounded-xl bg-[#090d16] border border-slate-800 p-2">
+                        <img src="8.png" alt="https://www.gridx.digital/#about" onclick="openLightbox('8.png', 'www bölməsi — https://www.gridx.digital/#about')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-800/80">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-400">www yönləndirmə &amp; görünüş</div>
+                    </div>
+                </div>
             `,
             case4: `
                 <div class="text-xs font-mono text-purple-400">CASE #04 • FIREWALL, AUDIT &amp; VOIP</div>
