@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="az" class="dark scroll-smooth">
+<html lang="az" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -19,10 +18,10 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        slatebg: '#111827',
-                        cardbg: '#1e293b',
-                        cybercyan: '#06b6d4',
-                        cyberemerald: '#10b981',
+                        lightbg: '#f8fafc',
+                        cardbg: '#ffffff',
+                        cybercyan: '#0891b2',
+                        cyberemerald: '#059669',
                     }
                 }
             }
@@ -30,77 +29,77 @@
     </script>
     <style>
         body {
-            background-color: #111827;
-            color: #f1f5f9;
+            background-color: #f8fafc;
+            color: #0f172a;
             background-image:
-                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.12) 0px, transparent 52%),
-                radial-gradient(at 100% 15%, rgba(16, 185, 129, 0.10) 0px, transparent 52%);
+                radial-gradient(at 0% 0%, rgba(8, 145, 178, 0.08) 0px, transparent 52%),
+                radial-gradient(at 100% 15%, rgba(5, 150, 105, 0.07) 0px, transparent 52%);
         }
         .grid-bg {
             background-size: 36px 36px;
             background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+                linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
         }
         .terminal-scroll::-webkit-scrollbar {
             width: 6px;
         }
         .terminal-scroll::-webkit-scrollbar-track {
-            background: #131c2e;
+            background: #e2e8f0;
         }
         .terminal-scroll::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #94a3b8;
             border-radius: 3px;
         }
         .glow-border:hover {
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.16);
+            box-shadow: 0 10px 28px rgba(8, 145, 178, 0.12);
         }
         .node-active {
-            border-color: #06b6d4 !important;
-            background-color: rgba(6, 182, 212, 0.15) !important;
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+            border-color: #0891b2 !important;
+            background-color: rgba(8, 145, 178, 0.08) !important;
+            box-shadow: 0 0 0 1px rgba(8, 145, 178, 0.25);
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 grid-bg">
+<body class="font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-900 grid-bg">
 
     <!-- Top Sticky Navigation -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-[#111827]/90 border-b border-slate-700/80">
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/25 to-emerald-500/25 border border-cyan-400/50 flex items-center justify-center text-cyan-300 font-mono font-bold text-sm group-hover:border-cyan-300 transition">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/15 to-emerald-500/15 border border-cyan-600/30 flex items-center justify-center text-cyan-700 font-mono font-bold text-sm group-hover:border-cyan-600 transition">
                     YK
                 </div>
                 <div class="font-mono text-sm">
-                    <span class="text-emerald-400 font-semibold">yegana</span><span class="text-slate-400">@</span><span class="text-cyan-300">sysadmin</span><span class="text-slate-300">:~$</span>
+                    <span class="text-emerald-700 font-semibold">yegana</span><span class="text-slate-400">@</span><span class="text-cyan-700">sysadmin</span><span class="text-slate-600">:~$</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-200">
-                <a href="#haqqimda" class="hover:text-cyan-300 transition">Haqqımda</a>
-                <a href="#layiheler" class="hover:text-cyan-300 transition">Case Study-lər</a>
-                <a href="#arxitektura" class="hover:text-cyan-300 transition">İnfrastruktur Sxemi</a>
-                <a href="#bacariqlar" class="hover:text-cyan-300 transition">Texniki Stack</a>
-                <a href="#sertifikatlar" class="hover:text-cyan-300 transition">Sertifikatlar</a>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-700">
+                <a href="#haqqimda" class="hover:text-cyan-700 transition">Haqqımda</a>
+                <a href="#layiheler" class="hover:text-cyan-700 transition">Case Study-lər</a>
+                <a href="#arxitektura" class="hover:text-cyan-700 transition">İnfrastruktur Sxemi</a>
+                <a href="#bacariqlar" class="hover:text-cyan-700 transition">Texniki Stack</a>
+                <a href="#sertifikatlar" class="hover:text-cyan-700 transition">Sertifikatlar</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="#elaqe" class="px-4 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-400/50 text-xs sm:text-sm font-medium transition flex items-center gap-2">
+                <a href="#elaqe" class="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-xs sm:text-sm font-medium transition flex items-center gap-2">
                     <i class="fa-solid fa-paper-plane text-xs"></i>
                     <span>Əlaqə</span>
                 </a>
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-200 hover:text-white">
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:text-slate-900">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobileMenu" class="hidden md:hidden bg-[#172033] border-b border-slate-700 px-4 py-4 space-y-3 text-sm">
-            <a href="#haqqimda" class="block py-1.5 text-slate-200 hover:text-cyan-300">Haqqımda</a>
-            <a href="#layiheler" class="block py-1.5 text-slate-200 hover:text-cyan-300">Case Study-lər</a>
-            <a href="#arxitektura" class="block py-1.5 text-slate-200 hover:text-cyan-300">İnfrastruktur Sxemi</a>
-            <a href="#bacariqlar" class="block py-1.5 text-slate-200 hover:text-cyan-300">Texniki Stack</a>
-            <a href="#sertifikatlar" class="block py-1.5 text-slate-200 hover:text-cyan-300">Sertifikatlar</a>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 text-sm">
+            <a href="#haqqimda" class="block py-1.5 text-slate-700 hover:text-cyan-700">Haqqımda</a>
+            <a href="#layiheler" class="block py-1.5 text-slate-700 hover:text-cyan-700">Case Study-lər</a>
+            <a href="#arxitektura" class="block py-1.5 text-slate-700 hover:text-cyan-700">İnfrastruktur Sxemi</a>
+            <a href="#bacariqlar" class="block py-1.5 text-slate-700 hover:text-cyan-700">Texniki Stack</a>
+            <a href="#sertifikatlar" class="block py-1.5 text-slate-700 hover:text-cyan-700">Sertifikatlar</a>
         </div>
     </header>
 
@@ -108,43 +107,43 @@
     <section id="haqqimda" class="pt-12 pb-20 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-xs font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
                     <span>NEO BOKT ASC • Kiçik Sistem Administratoru</span>
                 </div>
 
                 <div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
                         Yeganə Kərimli
                     </h1>
-                    <p class="mt-3 text-lg sm:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">
+                    <p class="mt-3 text-lg sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 to-emerald-700">
                         Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi
                     </p>
                 </div>
 
-                <p class="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    Linux (<span class="text-white font-semibold">RHEL</span>) və <span class="text-white font-semibold">Windows Server</span> sistemlərinin idarə olunması, Active Directory və Group Policy sazlanması, şəbəkə təhlükəsizliyi (<span class="text-white font-semibold">FortiGate, pfSense, Nmap</span>), konteynerləşdirmə (<span class="text-white font-semibold">Docker</span>), veb/mail serverlər (<span class="text-white font-semibold">NGINX, IIS, Postfix</span>) və IP telefoniya (<span class="text-white font-semibold">Yeastar PBX</span>) üzrə təcrübə.
+                <p class="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    Linux (<span class="text-slate-900 font-semibold">RHEL</span>) və <span class="text-slate-900 font-semibold">Windows Server</span> sistemlərinin idarə olunması, Active Directory və Group Policy sazlanması, şəbəkə təhlükəsizliyi (<span class="text-slate-900 font-semibold">FortiGate, pfSense, Nmap</span>), konteynerləşdirmə (<span class="text-slate-900 font-semibold">Docker</span>), veb/mail serverlər (<span class="text-slate-900 font-semibold">NGINX, IIS, Postfix</span>) və IP telefoniya (<span class="text-slate-900 font-semibold">Yeastar PBX</span>) üzrə təcrübə.
                 </p>
 
                 <div class="flex flex-wrap gap-2.5 pt-1">
-                    <span class="px-3 py-1.5 rounded-lg bg-red-500/15 border border-red-400/40 text-red-200 text-xs font-mono flex items-center gap-2">
+                    <span class="px-3 py-1.5 rounded-lg bg-red-50 border border-red-200 text-red-800 text-xs font-mono flex items-center gap-2">
                         <i class="fa-brands fa-redhat text-sm"></i> RHCSA Certified
                     </span>
-                    <span class="px-3 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-400/40 text-cyan-200 text-xs font-mono flex items-center gap-2">
+                    <span class="px-3 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono flex items-center gap-2">
                         <i class="fa-solid fa-shield-halved text-sm"></i> FortiGate 7.4 Operator
                     </span>
-                    <span class="px-3 py-1.5 rounded-lg bg-amber-500/15 border border-amber-400/40 text-amber-200 text-xs font-mono flex items-center gap-2">
+                    <span class="px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs font-mono flex items-center gap-2">
                         <i class="fa-solid fa-award text-sm"></i> Cybersecurity Honour Degree
                     </span>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 pt-3">
-                    <a href="#layiheler" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 font-semibold text-sm transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                    <a href="#layiheler" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-700 hover:to-emerald-700 text-white font-semibold text-sm transition shadow-md flex items-center gap-2">
                         <span>Layihələrə Bax (Case Studies)</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-100 font-medium text-sm transition flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin text-cyan-400 text-base"></i>
+                    <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-medium text-sm transition flex items-center gap-2 shadow-xs">
+                        <i class="fa-brands fa-linkedin text-cyan-700 text-base"></i>
                         <span>LinkedIn Profili</span>
                     </a>
                 </div>
@@ -152,40 +151,40 @@
 
             <!-- Right Interactive Terminal -->
             <div class="lg:col-span-5">
-                <div class="rounded-2xl bg-[#162033] border border-slate-700 shadow-2xl overflow-hidden">
-                    <div class="px-4 py-3 bg-[#1e2b42] border-b border-slate-700 flex items-center justify-between">
+                <div class="rounded-2xl bg-white border border-slate-200 shadow-lg overflow-hidden">
+                    <div class="px-4 py-3 bg-slate-100 border-b border-slate-200 flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-rose-400/90"></span>
-                            <span class="w-3 h-3 rounded-full bg-amber-400/90"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-400/90"></span>
+                            <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
                         </div>
-                        <span class="text-xs font-mono text-slate-300">bash — root@yegana-infra:~</span>
-                        <button onclick="clearTerminal()" class="text-xs font-mono text-slate-300 hover:text-white transition">clear</button>
+                        <span class="text-xs font-mono text-slate-600">bash — root@yegana-infra:~</span>
+                        <button onclick="clearTerminal()" class="text-xs font-mono text-slate-500 hover:text-slate-800 transition">clear</button>
                     </div>
 
-                    <div id="terminalOutput" class="p-4 h-72 overflow-y-auto terminal-scroll font-mono text-xs sm:text-sm space-y-3 text-slate-200">
-                        <div class="text-slate-300">
-                            Əmrlərə klikləyin və ya yazın (<span class="text-cyan-300">help</span>):
+                    <div id="terminalOutput" class="p-4 h-72 overflow-y-auto terminal-scroll font-mono text-xs sm:text-sm space-y-3 text-slate-800 bg-slate-50/70">
+                        <div class="text-slate-600">
+                            Əmrlərə klikləyin və ya yazın (<span class="text-cyan-700 font-semibold">help</span>):
                         </div>
                         <div>
-                            <span class="text-emerald-400">root@infra:~#</span> <span class="text-white">whoami</span>
-                            <div class="mt-1 text-cyan-200 pl-2 border-l-2 border-cyan-400/60">
+                            <span class="text-emerald-700 font-semibold">root@infra:~#</span> <span class="text-slate-900 font-semibold">whoami</span>
+                            <div class="mt-1 text-cyan-900 pl-2 border-l-2 border-cyan-600/50">
                                 Yeganə Kərimli — Kiçik Sistem Administratoru @ NEO BOKT ASC<br>
                                 Fokus: RHEL Linux, Windows AD/GPO, FortiGate, Docker, NGINX, Postfix
                             </div>
                         </div>
                     </div>
 
-                    <div class="px-3 py-2.5 bg-[#192438] border-t border-slate-700/80 flex flex-wrap gap-1.5">
-                        <button onclick="runCommand('ls projects/')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-200 border border-slate-600 text-xs font-mono text-slate-200 transition">ls projects/</button>
-                        <button onclick="runCommand('get-gpo')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-200 border border-slate-600 text-xs font-mono text-slate-200 transition">get-gpo</button>
-                        <button onclick="runCommand('status postfix')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-200 border border-slate-600 text-xs font-mono text-slate-200 transition">status postfix</button>
-                        <button onclick="runCommand('cat certs.txt')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-200 border border-slate-600 text-xs font-mono text-slate-200 transition">cat certs.txt</button>
+                    <div class="px-3 py-2.5 bg-slate-100 border-t border-slate-200 flex flex-wrap gap-1.5">
+                        <button onclick="runCommand('ls projects/')" class="px-2.5 py-1 rounded bg-white hover:bg-cyan-50 hover:text-cyan-800 border border-slate-300 text-xs font-mono text-slate-700 transition">ls projects/</button>
+                        <button onclick="runCommand('get-gpo')" class="px-2.5 py-1 rounded bg-white hover:bg-cyan-50 hover:text-cyan-800 border border-slate-300 text-xs font-mono text-slate-700 transition">get-gpo</button>
+                        <button onclick="runCommand('status postfix')" class="px-2.5 py-1 rounded bg-white hover:bg-cyan-50 hover:text-cyan-800 border border-slate-300 text-xs font-mono text-slate-700 transition">status postfix</button>
+                        <button onclick="runCommand('cat certs.txt')" class="px-2.5 py-1 rounded bg-white hover:bg-cyan-50 hover:text-cyan-800 border border-slate-300 text-xs font-mono text-slate-700 transition">cat certs.txt</button>
                     </div>
 
-                    <form id="terminalForm" class="px-4 py-2.5 bg-[#121a2a] border-t border-slate-700 flex items-center gap-2 font-mono text-xs sm:text-sm">
-                        <span class="text-emerald-400 shrink-0">root@infra:~#</span>
-                        <input id="terminalInput" type="text" placeholder="help yazın..." autocomplete="off" class="w-full bg-transparent text-white focus:outline-none placeholder-slate-400">
+                    <form id="terminalForm" class="px-4 py-2.5 bg-white border-t border-slate-200 flex items-center gap-2 font-mono text-xs sm:text-sm">
+                        <span class="text-emerald-700 font-semibold shrink-0">root@infra:~#</span>
+                        <input id="terminalInput" type="text" placeholder="help yazın..." autocomplete="off" class="w-full bg-transparent text-slate-900 focus:outline-none placeholder-slate-400">
                     </form>
                 </div>
             </div>
@@ -196,79 +195,79 @@
     <section id="layiheler" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-                <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Praktiki Təcrübə &amp; İcra</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Real İnfrastruktur Case Study-ləri</h2>
-                <p class="text-slate-300 mt-2 max-w-2xl text-sm sm:text-base">
+                <span class="text-cyan-700 font-mono text-xs uppercase tracking-wider font-semibold">// Praktiki Təcrübə &amp; İcra</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">Real İnfrastruktur Case Study-ləri</h2>
+                <p class="text-slate-600 mt-2 max-w-2xl text-sm sm:text-base">
                     İstehsalat və laboratoriya mühitlərində icra olunmuş sistem idarəetməsi, təhlükəsizlik siyasətləri və xidmət qurulmaları.
                 </p>
             </div>
 
             <div class="flex flex-wrap gap-2">
-                <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono bg-cyan-500/25 text-cyan-200 border border-cyan-400/50 transition" data-filter="all">Hamısı (4)</button>
-                <button onclick="filterProjects('security')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-200 border border-slate-700 hover:border-slate-500 transition" data-filter="security">Təhlükəsizlik</button>
-                <button onclick="filterProjects('windows')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-200 border border-slate-700 hover:border-slate-500 transition" data-filter="windows">Windows &amp; AD</button>
-                <button onclick="filterProjects('linux')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-200 border border-slate-700 hover:border-slate-500 transition" data-filter="linux">Linux &amp; Şəbəkə</button>
+                <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono bg-cyan-600 text-white border border-cyan-600 transition" data-filter="all">Hamısı (4)</button>
+                <button onclick="filterProjects('security')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-white text-slate-700 border border-slate-300 hover:border-slate-400 transition" data-filter="security">Təhlükəsizlik</button>
+                <button onclick="filterProjects('windows')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-white text-slate-700 border border-slate-300 hover:border-slate-400 transition" data-filter="windows">Windows &amp; AD</button>
+                <button onclick="filterProjects('linux')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-white text-slate-700 border border-slate-300 hover:border-slate-400 transition" data-filter="linux">Linux &amp; Şəbəkə</button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             <!-- CASE 1 -->
-            <article class="project-card rounded-2xl bg-cardbg border border-slate-700/90 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="security linux">
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm glow-border transition" data-category="security linux">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-md bg-rose-500/15 border border-rose-400/40 text-rose-200 text-xs font-mono">
+                        <span class="px-3 py-1 rounded-md bg-rose-50 border border-rose-200 text-rose-700 text-xs font-mono font-medium">
                             Security Awareness &amp; Postfix
                         </span>
-                        <span class="text-xs font-mono text-slate-300">CASE #01</span>
+                        <span class="text-xs font-mono text-slate-500">CASE #01</span>
                     </div>
 
-                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                         GoPhish + Postfix Simulasiyası və Maarifləndirmə Təlimi
                     </h3>
 
-                    <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
+                    <div class="space-y-3 text-sm text-slate-700 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Şirkət daxilində fişinq e-poçtlarına qarşı həssaslığın ölçülməsi və əməkdaşların təhlükəsiz davranış vərdişlərinin artırılması.
+                            <strong class="text-cyan-700 font-mono text-xs uppercase">Problem:</strong> Şirkət daxilində fişinq e-poçtlarına qarşı həssaslığın ölçülməsi və əməkdaşların təhlükəsiz davranış vərdişlərinin artırılması.
                         </p>
                         <p>
-                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> RHEL mühitində <span class="text-white font-semibold">Postfix</span> mail serveri və <span class="text-white font-semibold">GoPhish</span> qurulmaqla simulasiya kampaniyası keçirildi. Ardından 12 slaydlıq maarifləndirici təqdimat hazırlanaraq domen yoxlanışı, şifrə siyasəti, MFA və insidentlərin bildirilməsi izah olundu.
+                            <strong class="text-emerald-700 font-mono text-xs uppercase">Həll &amp; İcra:</strong> RHEL mühitində <span class="text-slate-900 font-semibold">Postfix</span> mail serveri və <span class="text-slate-900 font-semibold">GoPhish</span> qurulmaqla simulasiya kampaniyası keçirildi. Ardından 12 slaydlıq maarifləndirici təqdimat hazırlanaraq domen yoxlanışı, şifrə siyasəti, MFA və insidentlərin bildirilməsi izah olundu.
                         </p>
                     </div>
 
-                    <div class="mt-5 p-4 rounded-xl bg-[#131c2e] border border-slate-700/90">
-                        <div class="flex items-center justify-between text-xs font-mono text-slate-300 mb-3">
-                            <span><i class="fa-solid fa-chart-pie text-cyan-300 mr-1.5"></i>GoPhish Nəticələri</span>
-                            <span class="text-emerald-300">postfix.service: active</span>
+                    <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-600 mb-3">
+                            <span><i class="fa-solid fa-chart-pie text-cyan-700 mr-1.5"></i>GoPhish Nəticələri</span>
+                            <span class="text-emerald-700 font-semibold">postfix.service: active</span>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center font-mono">
-                            <div class="p-2 rounded bg-slate-800/90 border border-slate-700">
-                                <div class="text-emerald-300 font-bold text-base">5</div>
-                                <div class="text-[10px] text-slate-300">Sent</div>
+                            <div class="p-2 rounded bg-white border border-slate-200">
+                                <div class="text-emerald-700 font-bold text-base">5</div>
+                                <div class="text-[10px] text-slate-500">Sent</div>
                             </div>
-                            <div class="p-2 rounded bg-slate-800/90 border border-slate-700">
-                                <div class="text-amber-300 font-bold text-base">4</div>
-                                <div class="text-[10px] text-slate-300">Opened</div>
+                            <div class="p-2 rounded bg-white border border-slate-200">
+                                <div class="text-amber-600 font-bold text-base">4</div>
+                                <div class="text-[10px] text-slate-500">Opened</div>
                             </div>
-                            <div class="p-2 rounded bg-slate-800/90 border border-slate-700">
-                                <div class="text-orange-300 font-bold text-base">4</div>
-                                <div class="text-[10px] text-slate-300">Clicked</div>
+                            <div class="p-2 rounded bg-white border border-slate-200">
+                                <div class="text-orange-600 font-bold text-base">4</div>
+                                <div class="text-[10px] text-slate-500">Clicked</div>
                             </div>
-                            <div class="p-2 rounded bg-slate-800/90 border border-slate-700">
-                                <div class="text-cyan-300 font-bold text-base">0</div>
-                                <div class="text-[10px] text-slate-300">Submitted</div>
+                            <div class="p-2 rounded bg-white border border-slate-200">
+                                <div class="text-cyan-700 font-bold text-base">0</div>
+                                <div class="text-[10px] text-slate-500">Submitted</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 pt-4 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">RHEL</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">Postfix</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">GoPhish</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">RHEL</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">Postfix</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">GoPhish</span>
                     </div>
-                    <button onclick="openCaseModal('case1')" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 font-semibold">
+                    <button onclick="openCaseModal('case1')" class="text-xs font-mono text-cyan-700 hover:text-cyan-900 flex items-center gap-1.5 font-semibold">
                         <span>Texniki Detallar &amp; Sübutlar</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
@@ -276,51 +275,51 @@
             </article>
 
             <!-- CASE 2 -->
-            <article class="project-card rounded-2xl bg-cardbg border border-slate-700/90 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="windows security">
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm glow-border transition" data-category="windows security">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-400/40 text-cyan-200 text-xs font-mono">
+                        <span class="px-3 py-1 rounded-md bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-medium">
                             Active Directory &amp; GPO
                         </span>
-                        <span class="text-xs font-mono text-slate-300">CASE #02</span>
+                        <span class="text-xs font-mono text-slate-500">CASE #02</span>
                     </div>
 
-                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                         Active Directory OU Strukturu və Group Policy Siyasətləri
                     </h3>
 
-                    <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
+                    <div class="space-y-3 text-sm text-slate-700 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Şöbələr üzrə istifadəçi və cihaz idarəetməsinin sistemləşdirilməsi, icazəsiz USB/CMD/PowerShell istifadəsinin məhdudlaşdırılması.
+                            <strong class="text-cyan-700 font-mono text-xs uppercase">Problem:</strong> Şöbələr üzrə istifadəçi və cihaz idarəetməsinin sistemləşdirilməsi, icazəsiz USB/CMD/PowerShell istifadəsinin məhdudlaşdırılması.
                         </p>
                         <p>
-                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-mono text-xs">Credit, Finance, HR, IT, PK, RISK, PC, SERVER</span> OU strukturu quruldu; <span class="text-white font-mono text-xs">USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, PASSWORD_POLICY, WALLPAPER, LOCKSCREEN</span> GPO-ları tətbiq edildi.
+                            <strong class="text-emerald-700 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-slate-900 font-mono text-xs font-semibold">Credit, Finance, HR, IT, PK, RISK, PC, SERVER</span> OU strukturu quruldu; <span class="text-slate-900 font-mono text-xs font-semibold">USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, PASSWORD_POLICY, WALLPAPER, LOCKSCREEN</span> GPO-ları tətbiq edildi.
                         </p>
                     </div>
 
-                    <div class="mt-5 p-4 rounded-xl bg-[#131c2e] border border-slate-700/90 font-mono text-xs">
-                        <div class="flex items-center justify-between text-slate-300 mb-2.5">
-                            <span><i class="fa-solid fa-sitemap text-emerald-300 mr-1.5"></i>Aktiv GPO-lar</span>
-                            <span class="text-cyan-300">neo.local</span>
+                    <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs">
+                        <div class="flex items-center justify-between text-slate-600 mb-2.5">
+                            <span><i class="fa-solid fa-sitemap text-emerald-700 mr-1.5"></i>Aktiv GPO-lar</span>
+                            <span class="text-cyan-700 font-semibold">neo.local</span>
                         </div>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-emerald-300">USB_BLOCK</div>
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-emerald-300">CMD_BLOCK</div>
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-emerald-300">POWERSHELL_BLOCK</div>
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-cyan-300">PASSWORD_POLICY</div>
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-cyan-300">LOCKSCREEN</div>
-                            <div class="px-2.5 py-1.5 rounded bg-slate-800/90 border border-slate-700 text-cyan-300">WALLPAPER</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-emerald-800 font-medium">USB_BLOCK</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-emerald-800 font-medium">CMD_BLOCK</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-emerald-800 font-medium">POWERSHELL_BLOCK</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-cyan-800 font-medium">PASSWORD_POLICY</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-cyan-800 font-medium">LOCKSCREEN</div>
+                            <div class="px-2.5 py-1.5 rounded bg-white border border-slate-200 text-cyan-800 font-medium">WALLPAPER</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 pt-4 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">Active Directory</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">GPO</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">PowerShell</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">Active Directory</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">GPO</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">PowerShell</span>
                     </div>
-                    <button onclick="openCaseModal('case2')" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 font-semibold">
+                    <button onclick="openCaseModal('case2')" class="text-xs font-mono text-cyan-700 hover:text-cyan-900 flex items-center gap-1.5 font-semibold">
                         <span>Texniki Detallar &amp; Sübutlar</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
@@ -328,46 +327,46 @@
             </article>
 
             <!-- CASE 3 -->
-            <article class="project-card rounded-2xl bg-cardbg border border-slate-700/90 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="linux">
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm glow-border transition" data-category="linux">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-md bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 text-xs font-mono">
+                        <span class="px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-medium">
                             Docker &amp; NGINX Reverse Proxy
                         </span>
-                        <span class="text-xs font-mono text-slate-300">CASE #03</span>
+                        <span class="text-xs font-mono text-slate-500">CASE #03</span>
                     </div>
 
-                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                         Docker Konteynerləri və NGINX Reverse Proxy Quraşdırılması
                     </h3>
 
-                    <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
+                    <div class="space-y-3 text-sm text-slate-700 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Bulud mühitində veb tətbiqin Docker konteynerində izolyasiyalı işlədilməsi, DNS sazlamaları və NGINX vasitəsilə domen üzərindən nəşri[cite: 15, 17, 19, 20, 22].
+                            <strong class="text-cyan-700 font-mono text-xs uppercase">Problem:</strong> Bulud mühitində veb tətbiqin Docker konteynerində izolyasiyalı işlədilməsi, DNS sazlamaları və NGINX vasitəsilə domen üzərindən nəşri[cite: 15, 17, 19].
                         </p>
                         <p>
-                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Azure-da <span class="text-white font-semibold">Docker</span> və <span class="text-white font-semibold">NGINX</span> VM-ləri ayrıldı, <span class="text-white font-mono text-xs">docker compose up -d</span> ilə konteyner başladıldı, DNS <span class="text-white font-mono text-xs">A</span> qeydi ilə <span class="text-white font-mono text-xs">gridx.digital</span> canlıya çıxarıldı[cite: 15, 17, 19, 20, 22].
+                            <strong class="text-emerald-700 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Azure-da <span class="text-slate-900 font-semibold">Docker</span> və <span class="text-slate-900 font-semibold">NGINX</span> VM-ləri ayrıldı, <span class="text-slate-900 font-mono text-xs font-semibold">docker compose up -d</span> ilə konteyner başladıldı, DNS <span class="text-slate-900 font-mono text-xs font-semibold">A</span> qeydi ilə <span class="text-slate-900 font-mono text-xs font-semibold">gridx.digital</span> canlıya çıxarıldı[cite: 15, 17, 19].
                         </p>
                     </div>
 
-                    <div class="mt-5 p-4 rounded-xl bg-[#131c2e] border border-slate-700/90 font-mono text-xs">
+                    <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs">
                         <div class="flex items-center justify-between gap-2 text-[11px] text-center flex-wrap">
-                            <span class="px-2.5 py-1.5 rounded bg-slate-800 border border-slate-600 text-slate-200">DNS A Record</span>
-                            <i class="fa-solid fa-arrow-right text-cyan-400"></i>
-                            <span class="px-2.5 py-1.5 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-200">NGINX (52.184.80.189)</span>
-                            <i class="fa-solid fa-arrow-right text-cyan-400"></i>
-                            <span class="px-2.5 py-1.5 rounded bg-cyan-500/15 border border-cyan-400/40 text-cyan-200">Docker (20.187.144.155)</span>
+                            <span class="px-2.5 py-1.5 rounded bg-white border border-slate-300 text-slate-800">DNS A Record</span>
+                            <i class="fa-solid fa-arrow-right text-cyan-700"></i>
+                            <span class="px-2.5 py-1.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium">NGINX (52.184.80.189)</span>
+                            <i class="fa-solid fa-arrow-right text-cyan-700"></i>
+                            <span class="px-2.5 py-1.5 rounded bg-cyan-50 border border-cyan-200 text-cyan-800 font-medium">Docker (20.187.144.155)</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-6 pt-4 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">Docker</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">NGINX</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">DNS &amp; Web</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">Docker</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">NGINX</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">DNS &amp; Web</span>
                     </div>
-                    <button onclick="openCaseModal('case3')" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 font-semibold">
+                    <button onclick="openCaseModal('case3')" class="text-xs font-mono text-cyan-700 hover:text-cyan-900 flex items-center gap-1.5 font-semibold">
                         <span>Texniki Detallar &amp; Sübutlar</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
@@ -375,42 +374,42 @@
             </article>
 
             <!-- CASE 4 -->
-            <article class="project-card rounded-2xl bg-cardbg border border-slate-700/90 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="linux security windows">
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-200 p-6 sm:p-7 flex flex-col justify-between shadow-sm glow-border transition" data-category="linux security windows">
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
-                        <span class="px-3 py-1 rounded-md bg-purple-500/15 border border-purple-400/40 text-purple-200 text-xs font-mono">
+                        <span class="px-3 py-1 rounded-md bg-purple-50 border border-purple-200 text-purple-800 text-xs font-mono font-medium">
                             Firewall, Audit &amp; VoIP
                         </span>
-                        <span class="text-xs font-mono text-slate-300">CASE #04</span>
+                        <span class="text-xs font-mono text-slate-500">CASE #04</span>
                     </div>
 
-                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                         FortiGate 7.4 Firewall, Nmap Auditi və Yeastar PBX İnteqrasiyası
                     </h3>
 
-                    <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
+                    <div class="space-y-3 text-sm text-slate-700 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Şəbəkə trafikinin nəzarətdə saxlanılması, açıq port və xidmətlərin yoxlanılması, həmçinin daxili IP telefoniya rabitəsinin sabit işləməsi.
+                            <strong class="text-cyan-700 font-mono text-xs uppercase">Problem:</strong> Şəbəkə trafikinin nəzarətdə saxlanılması, açıq port və xidmətlərin yoxlanılması, həmçinin daxili IP telefoniya rabitəsinin sabit işləməsi.
                         </p>
                         <p>
-                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-semibold">FortiGate</span> və <span class="text-white font-semibold">pfSense</span> firewall qaydaları sazlandı, <span class="text-white font-semibold">Nmap</span> ilə şəbəkə skan/audit işləri aparıldı və <span class="text-white font-semibold">Yeastar PBX</span> IP telefoniya sistemi konfiqurasiya edildi.
+                            <strong class="text-emerald-700 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-slate-900 font-semibold">FortiGate</span> və <span class="text-slate-900 font-semibold">pfSense</span> firewall qaydaları sazlandı, <span class="text-slate-900 font-semibold">Nmap</span> ilə şəbəkə skan/audit işləri aparıldı və <span class="text-slate-900 font-semibold">Yeastar PBX</span> IP telefoniya sistemi konfiqurasiya edildi.
                         </p>
                     </div>
 
-                    <div class="mt-5 p-4 rounded-xl bg-[#131c2e] border border-slate-700/90 font-mono text-xs text-slate-200 space-y-1">
-                        <div><span class="text-purple-300">●</span> FortiGate 7.4 Policy &amp; Access Control</div>
-                        <div><span class="text-cyan-300">●</span> Nmap Port &amp; Service Discovery Audit</div>
-                        <div><span class="text-emerald-300">●</span> Yeastar PBX Extension &amp; Call Routing</div>
+                    <div class="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-xs text-slate-700 space-y-1">
+                        <div><span class="text-purple-700 font-bold">●</span> FortiGate 7.4 Policy &amp; Access Control</div>
+                        <div><span class="text-cyan-700 font-bold">●</span> Nmap Port &amp; Service Discovery Audit</div>
+                        <div><span class="text-emerald-700 font-bold">●</span> Yeastar PBX Extension &amp; Call Routing</div>
                     </div>
                 </div>
 
-                <div class="mt-6 pt-4 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">FortiGate 7.4</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">Nmap</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700">Yeastar PBX</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">FortiGate 7.4</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">Nmap</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200">Yeastar PBX</span>
                     </div>
-                    <button onclick="openCaseModal('case4')" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 font-semibold">
+                    <button onclick="openCaseModal('case4')" class="text-xs font-mono text-cyan-700 hover:text-cyan-900 flex items-center gap-1.5 font-semibold">
                         <span>Texniki Detallar</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
@@ -423,78 +422,78 @@
     <!-- INFRASTRUCTURE ARCHITECTURE DIAGRAM -->
     <section id="arxitektura" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="mb-10">
-            <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// İnteraktiv Sxem</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">İnfrastruktur və Təhlükəsizlik Topologiyası</h2>
-            <p class="text-slate-300 mt-2 text-sm sm:text-base">
+            <span class="text-cyan-700 font-mono text-xs uppercase tracking-wider font-semibold">// İnteraktiv Sxem</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">İnfrastruktur və Təhlükəsizlik Topologiyası</h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">
                 Hər bir qovşağa klikləyərək həmin komponentin idarəetmə və təhlükəsizlik detallarına baxa bilərsiniz.
             </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div class="lg:col-span-7 rounded-2xl bg-cardbg border border-slate-700/90 p-6 space-y-4">
-                <button onclick="selectNode('perimeter')" id="node-perimeter" class="topo-node node-active w-full text-left p-4 rounded-xl bg-[#131c2e] border border-slate-700 transition flex items-center justify-between">
+            <div class="lg:col-span-7 rounded-2xl bg-cardbg border border-slate-200 p-6 space-y-4 shadow-sm">
+                <button onclick="selectNode('perimeter')" id="node-perimeter" class="topo-node node-active w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 transition flex items-center justify-between">
                     <div class="flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-purple-300">
+                        <div class="w-10 h-10 rounded-lg bg-purple-100 border border-purple-200 flex items-center justify-center text-purple-700">
                             <i class="fa-solid fa-fire-flame-curved"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-white text-sm sm:text-base">1. Perimeter &amp; Firewall (FortiGate / pfSense)</div>
-                            <div class="text-xs text-slate-300 font-mono">Firewall Qaydaları • Nmap Audit • Trafik Nəzarəti</div>
+                            <div class="font-semibold text-slate-900 text-sm sm:text-base">1. Perimeter &amp; Firewall (FortiGate / pfSense)</div>
+                            <div class="text-xs text-slate-600 font-mono">Firewall Qaydaları • Nmap Audit • Trafik Nəzarəti</div>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
                 </button>
 
-                <button onclick="selectNode('windows')" id="node-windows" class="topo-node w-full text-left p-4 rounded-xl bg-[#131c2e] border border-slate-700 transition flex items-center justify-between">
+                <button onclick="selectNode('windows')" id="node-windows" class="topo-node w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 transition flex items-center justify-between">
                     <div class="flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-100 border border-cyan-200 flex items-center justify-center text-cyan-700">
                             <i class="fa-brands fa-windows"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-white text-sm sm:text-base">2. Windows Server &amp; Active Directory (neo.local)</div>
-                            <div class="text-xs text-slate-300 font-mono">OU Strukturu • GPO • DNS / DHCP • DFS • IIS</div>
+                            <div class="font-semibold text-slate-900 text-sm sm:text-base">2. Windows Server &amp; Active Directory (neo.local)</div>
+                            <div class="text-xs text-slate-600 font-mono">OU Strukturu • GPO • DNS / DHCP • DFS • IIS</div>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
                 </button>
 
-                <button onclick="selectNode('linux')" id="node-linux" class="topo-node w-full text-left p-4 rounded-xl bg-[#131c2e] border border-slate-700 transition flex items-center justify-between">
+                <button onclick="selectNode('linux')" id="node-linux" class="topo-node w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 transition flex items-center justify-between">
                     <div class="flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-700">
                             <i class="fa-brands fa-linux"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-white text-sm sm:text-base">3. RHEL Linux, Docker, NGINX &amp; Postfix</div>
-                            <div class="text-xs text-slate-300 font-mono">RHCSA • Reverse Proxy • Konteynerlər • SMTP Relay</div>
+                            <div class="font-semibold text-slate-900 text-sm sm:text-base">3. RHEL Linux, Docker, NGINX &amp; Postfix</div>
+                            <div class="text-xs text-slate-600 font-mono">RHCSA • Reverse Proxy • Konteynerlər • SMTP Relay</div>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
                 </button>
 
-                <button onclick="selectNode('voip')" id="node-voip" class="topo-node w-full text-left p-4 rounded-xl bg-[#131c2e] border border-slate-700 transition flex items-center justify-between">
+                <button onclick="selectNode('voip')" id="node-voip" class="topo-node w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 transition flex items-center justify-between">
                     <div class="flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300">
+                        <div class="w-10 h-10 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-700">
                             <i class="fa-solid fa-phone-volume"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-white text-sm sm:text-base">4. Yeastar PBX &amp; İstifadəçi Dəstəyi</div>
-                            <div class="text-xs text-slate-300 font-mono">IP Telefoniya • Outlook • 1C • İşçi Stansiyaları</div>
+                            <div class="font-semibold text-slate-900 text-sm sm:text-base">4. Yeastar PBX &amp; İstifadəçi Dəstəyi</div>
+                            <div class="text-xs text-slate-600 font-mono">IP Telefoniya • Outlook • 1C • İşçi Stansiyaları</div>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
                 </button>
             </div>
 
-            <div id="nodeInspector" class="lg:col-span-5 rounded-2xl bg-[#162033] border border-slate-700 p-6">
-                <div class="text-xs font-mono text-cyan-300 uppercase mb-1">Seçilmiş Qovşaq Detalları</div>
-                <h3 id="inspectorTitle" class="text-xl font-bold text-white mb-3">Perimeter &amp; Firewall (FortiGate / pfSense)</h3>
-                <p id="inspectorDesc" class="text-sm text-slate-200 leading-relaxed mb-4">
+            <div id="nodeInspector" class="lg:col-span-5 rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+                <div class="text-xs font-mono text-cyan-700 uppercase font-semibold mb-1">Seçilmiş Qovşaq Detalları</div>
+                <h3 id="inspectorTitle" class="text-xl font-bold text-slate-900 mb-3">Perimeter &amp; Firewall (FortiGate / pfSense)</h3>
+                <p id="inspectorDesc" class="text-sm text-slate-700 leading-relaxed mb-4">
                     Şəbəkə sərhədində giriş/çıxış siyasətlərinin idarə edilməsi, təhlükəsizlik qaydalarının sazlanması və Nmap vasitəsilə şəbəkə port/xidmət analizinin aparılması.
                 </p>
-                <ul id="inspectorPoints" class="space-y-2 text-xs sm:text-sm text-slate-200 font-mono">
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>FortiGate 7.4 və pfSense konfiqurasiyası</span></li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>Nmap ilə şəbəkə skanlanması və zəiflik təhlili</span></li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>TCP/IP əsaslı şəbəkə axınının nəzarəti</span></li>
+                <ul id="inspectorPoints" class="space-y-2 text-xs sm:text-sm text-slate-800 font-mono">
+                    <li class="flex items-start gap-2"><span class="text-emerald-700 font-bold">▸</span><span>FortiGate 7.4 və pfSense konfiqurasiyası</span></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-700 font-bold">▸</span><span>Nmap ilə şəbəkə skanlanması və zəiflik təhlili</span></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-700 font-bold">▸</span><span>TCP/IP əsaslı şəbəkə axınının nəzarəti</span></li>
                 </ul>
             </div>
         </div>
@@ -503,17 +502,17 @@
     <!-- TECHNICAL SKILLS -->
     <section id="bacariqlar" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="mb-12">
-            <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Bacarıqlar &amp; Alətlər</span>
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Texniki Stack</h2>
+            <span class="text-cyan-700 font-mono text-xs uppercase tracking-wider font-semibold">// Bacarıqlar &amp; Alətlər</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-1">Texniki Stack</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="rounded-2xl bg-cardbg border border-slate-700/90 p-6">
-                <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-300 flex items-center justify-center mb-4">
+            <div class="rounded-2xl bg-cardbg border border-slate-200 p-6 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center mb-4">
                     <i class="fa-solid fa-server"></i>
                 </div>
-                <h3 class="font-bold text-white text-lg mb-3">Sistem &amp; Server</h3>
-                <ul class="space-y-2 text-sm text-slate-200 font-mono">
+                <h3 class="font-bold text-slate-900 text-lg mb-3">Sistem &amp; Server</h3>
+                <ul class="space-y-2 text-sm text-slate-700 font-mono">
                     <li>• Linux (RHEL - RHCSA)</li>
                     <li>• Windows Server</li>
                     <li>• Active Directory (OU, İcazələr)</li>
@@ -523,12 +522,12 @@
                 </ul>
             </div>
 
-            <div class="rounded-2xl bg-cardbg border border-slate-700/90 p-6">
-                <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center mb-4">
+            <div class="rounded-2xl bg-cardbg border border-slate-200 p-6 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center mb-4">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <h3 class="font-bold text-white text-lg mb-3">Şəbəkə &amp; Təhlükəsizlik</h3>
-                <ul class="space-y-2 text-sm text-slate-200 font-mono">
+                <h3 class="font-bold text-slate-900 text-lg mb-3">Şəbəkə &amp; Təhlükəsizlik</h3>
+                <ul class="space-y-2 text-sm text-slate-700 font-mono">
                     <li>• FortiGate (7.4 Operator)</li>
                     <li>• pfSense Firewall</li>
                     <li>• Nmap Audit &amp; Analiz</li>
@@ -538,12 +537,12 @@
                 </ul>
             </div>
 
-            <div class="rounded-2xl bg-cardbg border border-slate-700/90 p-6">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-4">
+            <div class="rounded-2xl bg-cardbg border border-slate-200 p-6 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
                     <i class="fa-brands fa-docker"></i>
                 </div>
-                <h3 class="font-bold text-white text-lg mb-3">Konteyner &amp; Veb</h3>
-                <ul class="space-y-2 text-sm text-slate-200 font-mono">
+                <h3 class="font-bold text-slate-900 text-lg mb-3">Konteyner &amp; Veb</h3>
+                <ul class="space-y-2 text-sm text-slate-700 font-mono">
                     <li>• Docker Konteynerlər</li>
                     <li>• NGINX Reverse Proxy</li>
                     <li>• Virtualizasiya</li>
@@ -552,12 +551,12 @@
                 </ul>
             </div>
 
-            <div class="rounded-2xl bg-cardbg border border-slate-700/90 p-6">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center mb-4">
+            <div class="rounded-2xl bg-cardbg border border-slate-200 p-6 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
                     <i class="fa-solid fa-headset"></i>
                 </div>
-                <h3 class="font-bold text-white text-lg mb-3">Telefoniya &amp; Dəstək</h3>
-                <ul class="space-y-2 text-sm text-slate-200 font-mono">
+                <h3 class="font-bold text-slate-900 text-lg mb-3">Telefoniya &amp; Dəstək</h3>
+                <ul class="space-y-2 text-sm text-slate-700 font-mono">
                     <li>• Yeastar PBX İnteqrasiyası</li>
                     <li>• Microsoft Outlook</li>
                     <li>• 1C Korporativ Sistem</li>
@@ -571,67 +570,67 @@
     <section id="sertifikatlar" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div class="lg:col-span-7">
-                <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Rəsmi Təsdiqlər</span>
-                <h2 class="text-3xl font-bold text-white mt-1 mb-6">Sertifikatlar</h2>
+                <span class="text-cyan-700 font-mono text-xs uppercase tracking-wider font-semibold">// Rəsmi Təsdiqlər</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1 mb-6">Sertifikatlar</h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-700/90 flex items-start gap-3.5">
-                        <i class="fa-brands fa-redhat text-red-400 text-xl mt-0.5"></i>
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-200 flex items-start gap-3.5 shadow-xs">
+                        <i class="fa-brands fa-redhat text-red-600 text-xl mt-0.5"></i>
                         <div>
-                            <div class="font-bold text-white text-sm">RHCSA</div>
-                            <div class="text-xs text-slate-300">Red Hat Certified System Administrator</div>
+                            <div class="font-bold text-slate-900 text-sm">RHCSA</div>
+                            <div class="text-xs text-slate-600">Red Hat Certified System Administrator</div>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-700/90 flex items-start gap-3.5">
-                        <i class="fa-solid fa-shield text-cyan-300 text-xl mt-0.5"></i>
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-200 flex items-start gap-3.5 shadow-xs">
+                        <i class="fa-solid fa-shield text-cyan-700 text-xl mt-0.5"></i>
                         <div>
-                            <div class="font-bold text-white text-sm">FCA — FortiGate 7.4 Operator</div>
-                            <div class="text-xs text-slate-300">Fortinet Certified Associate</div>
+                            <div class="font-bold text-slate-900 text-sm">FCA — FortiGate 7.4 Operator</div>
+                            <div class="text-xs text-slate-600">Fortinet Certified Associate</div>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-700/90 flex items-start gap-3.5">
-                        <i class="fa-solid fa-shield-halved text-emerald-300 text-xl mt-0.5"></i>
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-200 flex items-start gap-3.5 shadow-xs">
+                        <i class="fa-solid fa-shield-halved text-emerald-700 text-xl mt-0.5"></i>
                         <div>
-                            <div class="font-bold text-white text-sm">Fortinet Certified Fundamentals</div>
-                            <div class="text-xs text-slate-300">Fundamentals in Cybersecurity</div>
+                            <div class="font-bold text-slate-900 text-sm">Fortinet Certified Fundamentals</div>
+                            <div class="text-xs text-slate-600">Fundamentals in Cybersecurity</div>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-700/90 flex items-start gap-3.5">
-                        <i class="fa-brands fa-linux text-amber-300 text-xl mt-0.5"></i>
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-200 flex items-start gap-3.5 shadow-xs">
+                        <i class="fa-brands fa-linux text-amber-700 text-xl mt-0.5"></i>
                         <div>
-                            <div class="font-bold text-white text-sm">RH124 &amp; RH134</div>
-                            <div class="text-xs text-slate-300">Red Hat System Administration I &amp; II</div>
+                            <div class="font-bold text-slate-900 text-sm">RH124 &amp; RH134</div>
+                            <div class="text-xs text-slate-600">Red Hat System Administration I &amp; II</div>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-700/90 flex items-start gap-3.5 sm:col-span-2">
-                        <i class="fa-solid fa-certificate text-purple-300 text-xl mt-0.5"></i>
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-200 flex items-start gap-3.5 sm:col-span-2 shadow-xs">
+                        <i class="fa-solid fa-certificate text-purple-700 text-xl mt-0.5"></i>
                         <div>
-                            <div class="font-bold text-white text-sm">Certiport — Information Technology Specialist</div>
-                            <div class="text-xs text-slate-300">Beynəlxalq İT Mütəxəssis Sertifikatı</div>
+                            <div class="font-bold text-slate-900 text-sm">Certiport — Information Technology Specialist</div>
+                            <div class="text-xs text-slate-600">Beynəlxalq İT Mütəxəssis Sertifikatı</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="lg:col-span-5">
-                <span class="text-emerald-300 font-mono text-xs uppercase tracking-wider">// Akademik Bazası</span>
-                <h2 class="text-3xl font-bold text-white mt-1 mb-6">Təhsil</h2>
+                <span class="text-emerald-700 font-mono text-xs uppercase tracking-wider font-semibold">// Akademik Bazası</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-1 mb-6">Təhsil</h2>
 
                 <div class="space-y-4">
-                    <div class="p-5 rounded-2xl bg-cardbg border border-slate-700/90">
-                        <div class="text-xs font-mono text-cyan-300">2022 – 2026</div>
-                        <div class="font-bold text-white text-base mt-1">Bakı Dövlət Universiteti</div>
-                        <div class="text-sm text-slate-200 mt-0.5">Riyaziyyat</div>
+                    <div class="p-5 rounded-2xl bg-cardbg border border-slate-200 shadow-xs">
+                        <div class="text-xs font-mono text-cyan-700 font-semibold">2022 – 2026</div>
+                        <div class="font-bold text-slate-900 text-base mt-1">Bakı Dövlət Universiteti</div>
+                        <div class="text-sm text-slate-700 mt-0.5">Riyaziyyat</div>
                     </div>
 
-                    <div class="p-5 rounded-2xl bg-cardbg border border-slate-700/90">
-                        <div class="text-xs font-mono text-emerald-300">2024 – 2025 • Honour Degree</div>
-                        <div class="font-bold text-white text-base mt-1">Code Academy</div>
-                        <div class="text-sm text-slate-200 mt-0.5">Cybersecurity Fundamentals</div>
+                    <div class="p-5 rounded-2xl bg-cardbg border border-slate-200 shadow-xs">
+                        <div class="text-xs font-mono text-emerald-700 font-semibold">2024 – 2025 • Honour Degree</div>
+                        <div class="font-bold text-slate-900 text-base mt-1">Code Academy</div>
+                        <div class="text-sm text-slate-700 mt-0.5">Cybersecurity Fundamentals</div>
                     </div>
                 </div>
             </div>
@@ -639,27 +638,27 @@
     </section>
 
     <!-- CONTACT FOOTER -->
-    <footer id="elaqe" class="border-t border-slate-700 bg-[#0d1422] py-14 px-4 sm:px-6 lg:px-8">
+    <footer id="elaqe" class="border-t border-slate-200 bg-white py-14 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-                <div class="text-2xl font-bold text-white">Yeganə Kərimli</div>
-                <p class="text-slate-300 text-sm mt-1">Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi</p>
+                <div class="text-2xl font-bold text-slate-900">Yeganə Kərimli</div>
+                <p class="text-slate-600 text-sm mt-1">Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi</p>
             </div>
 
             <div class="flex flex-wrap items-center gap-3">
-                <button onclick="copyEmail()" class="px-4 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-sm font-mono flex items-center gap-2 transition">
+                <button onclick="copyEmail()" class="px-4 py-2.5 rounded-xl bg-cyan-50 hover:bg-cyan-100 border border-cyan-200 text-cyan-900 text-sm font-mono flex items-center gap-2 transition">
                     <i class="fa-solid fa-envelope"></i>
                     <span>yeganakarimlii@gmail.com</span>
                     <i id="copyIcon" class="fa-regular fa-copy text-xs"></i>
                 </button>
 
-                <a href="tel:+994558114017" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-100 text-sm font-mono flex items-center gap-2 transition">
-                    <i class="fa-solid fa-phone text-emerald-400"></i>
+                <a href="tel:+994558114017" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-sm font-mono flex items-center gap-2 transition">
+                    <i class="fa-solid fa-phone text-emerald-700"></i>
                     <span>+994 55 811 40 17</span>
                 </a>
 
-                <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-100 text-sm font-mono flex items-center gap-2 transition">
-                    <i class="fa-brands fa-linkedin text-cyan-400"></i>
+                <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-800 text-sm font-mono flex items-center gap-2 transition">
+                    <i class="fa-brands fa-linkedin text-cyan-700"></i>
                     <span>LinkedIn</span>
                 </a>
             </div>
@@ -667,23 +666,23 @@
     </footer>
 
     <!-- CASE MODAL -->
-    <div id="caseModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-[#182236] border border-slate-600 rounded-2xl max-w-4xl w-full p-6 sm:p-7 relative shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
-            <button onclick="closeCaseModal()" class="sticky top-0 float-right z-10 w-8 h-8 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-100 flex items-center justify-center">
+    <div id="caseModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-xs items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-4xl w-full p-6 sm:p-7 relative shadow-2xl my-8 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCaseModal()" class="sticky top-0 float-right z-10 w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div id="modalContent" class="space-y-4 text-sm text-slate-200 pr-2"></div>
+            <div id="modalContent" class="space-y-4 text-sm text-slate-700 pr-2"></div>
         </div>
     </div>
 
     <!-- LIGHTBOX MODAL FOR FULLSCREEN SCREENSHOTS -->
-    <div id="lightboxModal" class="fixed inset-0 z-[60] hidden bg-slate-950/90 backdrop-blur-sm items-center justify-center p-4">
+    <div id="lightboxModal" class="fixed inset-0 z-[60] hidden bg-slate-900/80 backdrop-blur-xs items-center justify-center p-4">
         <div class="relative max-w-5xl w-full flex flex-col items-center">
-            <button onclick="closeLightbox()" class="self-end mb-3 px-3.5 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-100 text-xs font-mono flex items-center gap-1.5">
+            <button onclick="closeLightbox()" class="self-end mb-3 px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-800 text-xs font-mono flex items-center gap-1.5 shadow-sm">
                 <i class="fa-solid fa-xmark"></i> Bağla
             </button>
-            <img id="lightboxImg" src="" alt="Sübut şəkli" class="max-h-[82vh] w-auto rounded-xl border border-slate-600 shadow-2xl">
-            <p id="lightboxCaption" class="mt-3 text-xs font-mono text-slate-200 text-center"></p>
+            <img id="lightboxImg" src="" alt="Sübut şəkli" class="max-h-[82vh] w-auto rounded-xl border border-slate-300 shadow-2xl bg-white">
+            <p id="lightboxCaption" class="mt-3 text-xs font-mono text-white text-center"></p>
         </div>
     </div>
 
@@ -707,7 +706,7 @@
 
         function appendTerminal(cmd, out) {
             const block = document.createElement('div');
-            block.innerHTML = `<span class="text-emerald-400">root@infra:~#</span> <span class="text-white">${cmd}</span><div class="mt-1 text-cyan-200 pl-2 border-l-2 border-cyan-400/60 whitespace-pre-line">${out}</div>`;
+            block.innerHTML = `<span class="text-emerald-700 font-semibold">root@infra:~#</span> <span class="text-slate-900 font-semibold">${cmd}</span><div class="mt-1 text-cyan-900 pl-2 border-l-2 border-cyan-600/50 whitespace-pre-line">${out}</div>`;
             terminalOutput.appendChild(block);
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
@@ -736,12 +735,12 @@
         function filterProjects(category) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 const active = btn.dataset.filter === category;
-                btn.classList.toggle('bg-cyan-500/25', active);
-                btn.classList.toggle('text-cyan-200', active);
-                btn.classList.toggle('border-cyan-400/50', active);
-                btn.classList.toggle('bg-cardbg', !active);
-                btn.classList.toggle('text-slate-200', !active);
-                btn.classList.toggle('border-slate-700', !active);
+                btn.classList.toggle('bg-cyan-600', active);
+                btn.classList.toggle('text-white', active);
+                btn.classList.toggle('border-cyan-600', active);
+                btn.classList.toggle('bg-white', !active);
+                btn.classList.toggle('text-slate-700', !active);
+                btn.classList.toggle('border-slate-300', !active);
             });
             document.querySelectorAll('.project-card').forEach(card => {
                 const cats = card.dataset.category.split(' ');
@@ -779,93 +778,93 @@
             document.getElementById('inspectorTitle').textContent = d.title;
             document.getElementById('inspectorDesc').textContent = d.desc;
             document.getElementById('inspectorPoints').innerHTML = d.points.map(p =>
-                `<li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>${p}</span></li>`
+                `<li class="flex items-start gap-2"><span class="text-emerald-700 font-bold">▸</span><span>${p}</span></li>`
             ).join('');
         }
 
         const caseDetails = {
             case1: `
-                <div class="text-xs font-mono text-rose-300">CASE #01 • SECURITY AWARENESS &amp; POSTFIX</div>
-                <h3 class="text-2xl font-bold text-white">GoPhish + Postfix Simulasiyası və Maarifləndirmə</h3>
+                <div class="text-xs font-mono text-rose-700 font-semibold">CASE #01 • SECURITY AWARENESS &amp; POSTFIX</div>
+                <h3 class="text-2xl font-bold text-slate-900">GoPhish + Postfix Simulasiyası və Maarifləndirmə</h3>
                 <p>RHEL üzərində Postfix mail serveri və GoPhish qurulmaqla kampaniya keçirilib, ardınca 12 slaydlıq maarifləndirici təqdimat hazırlanıb[cite: 10, 11, 12].</p>
 
-                <div class="p-3.5 rounded-xl bg-[#131c2e] border border-slate-700 space-y-1.5 text-xs text-slate-200">
-                    <div class="font-mono text-cyan-300 font-semibold">12 Slaydlıq Təlim Xülasəsi:</div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs text-slate-700">
+                    <div class="font-mono text-cyan-800 font-semibold">12 Slaydlıq Təlim Xülasəsi:</div>
                     <div>• Rəsmi domen vs saxta/IP keçidlərin yoxlanılması (linkə klikləmədən əvvəl ünvanın analiz edilməsi)[cite: 10]</div>
                     <div>• HTTP (şifrələnməmiş) və HTTPS (SSL/TLS) bağlantılarının fərqi[cite: 10]</div>
                     <div>• Unikal şifrə, MFA, iş cihazının kilidlənməsi və şübhəli halın dərhal İT-yə bildirilməsi[cite: 10]</div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2.5">
-                        <img src="Screenshot%20(2494).png" alt="GoPhish Dashboard" onclick="openLightbox('Screenshot%20(2494).png', 'GoPhish Dashboard — Kampaniya statistikası')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-2 text-xs font-mono text-slate-300">GoPhish Dashboard (5 Sent, 4 Opened, 4 Clicked)[cite: 5]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2.5">
+                        <img src="Screenshot%20(2494).png" alt="GoPhish Dashboard" onclick="openLightbox('Screenshot%20(2494).png', 'GoPhish Dashboard — Kampaniya statistikası')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-2 text-xs font-mono text-slate-600">GoPhish Dashboard (5 Sent, 4 Opened, 4 Clicked)[cite: 5]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2.5">
-                        <img src="Screenshot%20(2495).jpg" alt="Postfix Service Status" onclick="openLightbox('Screenshot%20(2495).jpg', 'RHEL — systemctl status postfix.service')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-2 text-xs font-mono text-slate-300">Postfix Mail Transport Agent — active (running)[cite: 6]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2.5">
+                        <img src="Screenshot%20(2495).jpg" alt="Postfix Service Status" onclick="openLightbox('Screenshot%20(2495).jpg', 'RHEL — systemctl status postfix.service')" class="w-full h-44 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-2 text-xs font-mono text-slate-600">Postfix Mail Transport Agent — active (running)[cite: 6]</div>
                     </div>
                 </div>
             `,
             case2: `
-                <div class="text-xs font-mono text-cyan-300">CASE #02 • ACTIVE DIRECTORY &amp; GPO</div>
-                <h3 class="text-2xl font-bold text-white">AD OU Strukturu və Group Policy Hardening</h3>
+                <div class="text-xs font-mono text-cyan-800 font-semibold">CASE #02 • ACTIVE DIRECTORY &amp; GPO</div>
+                <h3 class="text-2xl font-bold text-slate-900">AD OU Strukturu və Group Policy Hardening</h3>
                 <p>Credit, Finance, HR, IT, PK, RISK, PC və SERVER OU-ları üzrə GPO-lar sazlanıb; şifrə siyasəti, korporativ Lockscreen/Wallpaper və USB məhdudiyyəti tətbiq edilib[cite: 7, 8, 9].</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2.5">
-                        <img src="Lockscreen_2.png" alt="Korporativ Lockscreen Şifrə Siyasəti" onclick="openLightbox('Lockscreen_2.png', 'LOCKSCREEN GPO — Şifrə siyasəti və dəstək nömrəsi')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-2 text-[11px] font-mono text-slate-300">Lockscreen (Şifrə siyasəti + Dəstək)[cite: 7]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2.5">
+                        <img src="Lockscreen_2.png" alt="Korporativ Lockscreen Şifrə Siyasəti" onclick="openLightbox('Lockscreen_2.png', 'LOCKSCREEN GPO — Şifrə siyasəti və dəstək nömrəsi')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-2 text-[11px] font-mono text-slate-600">Lockscreen (Şifrə siyasəti + Dəstək)[cite: 7]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2.5">
-                        <img src="image_a6d22d.jpg" alt="Korporativ Desktop Wallpaper" onclick="openLightbox('image_a6d22d.jpg', 'WALLPAPER GPO — İşçi stansiyası fonu')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-2 text-[11px] font-mono text-slate-300">Desktop Wallpaper GPO[cite: 8]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2.5">
+                        <img src="image_a6d22d.jpg" alt="Korporativ Desktop Wallpaper" onclick="openLightbox('image_a6d22d.jpg', 'WALLPAPER GPO — İşçi stansiyası fonu')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-2 text-[11px] font-mono text-slate-600">Desktop Wallpaper GPO[cite: 8]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2.5">
-                        <img src="image_a6d247.jpg" alt="USB Block Siyasəti" onclick="openLightbox('image_a6d247.jpg', 'USB_BLOCK GPO — Removable Disk məhdudiyyəti')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-2 text-[11px] font-mono text-slate-300">USB_BLOCK Siyasəti[cite: 9]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2.5">
+                        <img src="image_a6d247.jpg" alt="USB Block Siyasəti" onclick="openLightbox('image_a6d247.jpg', 'USB_BLOCK GPO — Removable Disk məhdudiyyəti')" class="w-full h-36 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-2 text-[11px] font-mono text-slate-600">USB_BLOCK Siyasəti[cite: 9]</div>
                     </div>
                 </div>
             `,
             case3: `
-                <div class="text-xs font-mono text-emerald-300">CASE #03 • DOCKER, NGINX &amp; DNS</div>
-                <h3 class="text-2xl font-bold text-white">Docker Konteynerləri, NGINX və Domen Sazlanması</h3>
-                <p>Azure Linux VM-ləri üzərində Docker konteyneri və NGINX sazlanıb, DNS A qeydi ilə sayt canlıya çıxarılıb[cite: 15, 17, 19, 20, 22].</p>
+                <div class="text-xs font-mono text-emerald-700 font-semibold">CASE #03 • DOCKER, NGINX &amp; DNS</div>
+                <h3 class="text-2xl font-bold text-slate-900">Docker Konteynerləri, NGINX və Domen Sazlanması</h3>
+                <p>Azure Linux VM-ləri üzərində Docker konteyneri və NGINX sazlanıb, DNS A qeydi ilə sayt canlıya çıxarılıb[cite: 15, 17, 19].</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-1">
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="1.png" alt="Azure Virtual Machines — Docker and NGINX" onclick="openLightbox('1.png', 'Azure VMs — Docker (20.187.144.155) və NGINX (52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">Azure Docker &amp; NGINX VM-lər[cite: 15]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="1.png" alt="Azure Virtual Machines — Docker and NGINX" onclick="openLightbox('1.png', 'Azure VMs — Docker (20.187.144.155) və NGINX (52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">Azure Docker &amp; NGINX VM-lər[cite: 15]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="2.jpg" alt="systemctl status docker" onclick="openLightbox('2.jpg', 'systemctl enable --now docker &amp; status docker')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">Docker servisi (active)[cite: 16]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="2.jpg" alt="systemctl status docker" onclick="openLightbox('2.jpg', 'systemctl enable --now docker &amp; status docker')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">Docker servisi (active)[cite: 16]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="3.png" alt="docker compose up -d" onclick="openLightbox('3.png', 'docker compose up -d — apache_container')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">Docker Compose deployment[cite: 17]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="3.png" alt="docker compose up -d" onclick="openLightbox('3.png', 'docker compose up -d — apache_container')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">Docker Compose deployment[cite: 17]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="4.png" alt="curl http://20.187.144.155" onclick="openLightbox('4.png', 'curl http://20.187.144.155 HTML cavabı')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">curl cavab testi[cite: 18]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="4.png" alt="curl http://20.187.144.155" onclick="openLightbox('4.png', 'curl http://20.187.144.155 HTML cavabı')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">curl cavab testi[cite: 18]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="6.png" alt="GoDaddy DNS A Record" onclick="openLightbox('6.png', 'DNS A qeydi (@ -> 52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">DNS A qeydi (NGINX IP)[cite: 20]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="6.png" alt="GoDaddy DNS A Record" onclick="openLightbox('6.png', 'DNS A qeydi (@ -> 52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">DNS A qeydi (NGINX IP)</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="5.jpg" alt="https://gridx.digital" onclick="openLightbox('5.jpg', 'Canlı sayt — https://gridx.digital')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">Canlı domen[cite: 19]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="5.jpg" alt="https://gridx.digital" onclick="openLightbox('5.jpg', 'Canlı sayt — https://gridx.digital')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">Canlı domen[cite: 19]</div>
                     </div>
-                    <div class="rounded-xl bg-[#131c2e] border border-slate-700 p-2">
-                        <img src="8.png" alt="https://www.gridx.digital/#about" onclick="openLightbox('8.png', 'www bölməsi — https://www.gridx.digital/#about')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
-                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">www yönləndirmə &amp; görünüş[cite: 22]</div>
+                    <div class="rounded-xl bg-slate-50 border border-slate-200 p-2">
+                        <img src="8.png" alt="https://www.gridx.digital/#about" onclick="openLightbox('8.png', 'www bölməsi — https://www.gridx.digital/#about')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-200">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-600">www yönləndirmə &amp; görünüş</div>
                     </div>
                 </div>
             `,
             case4: `
-                <div class="text-xs font-mono text-purple-300">CASE #04 • FIREWALL, AUDIT &amp; VOIP</div>
-                <h3 class="text-2xl font-bold text-white">FortiGate 7.4, Nmap və Yeastar PBX</h3>
+                <div class="text-xs font-mono text-purple-700 font-semibold">CASE #04 • FIREWALL, AUDIT &amp; VOIP</div>
+                <h3 class="text-2xl font-bold text-slate-900">FortiGate 7.4, Nmap və Yeastar PBX</h3>
                 <p>FortiGate/pfSense firewall siyasətləri, Nmap ilə şəbəkə analizi və Yeastar PBX IP telefoniya inteqrasiyası icra olunub.</p>
             `
         };
@@ -912,7 +911,7 @@
             navigator.clipboard?.writeText('yeganakarimlii@gmail.com');
             const icon = document.getElementById('copyIcon');
             if (icon) {
-                icon.className = 'fa-solid fa-check text-emerald-400 text-xs';
+                icon.className = 'fa-solid fa-check text-emerald-700 text-xs';
                 setTimeout(() => { icon.className = 'fa-regular fa-copy text-xs'; }, 1800);
             }
         }
