@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="az" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeganə Kərimli | Sistem Administratoru & İT İnfrastruktur Mütəxəssisi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slatebg: '#080c14',
+                        cardbg: '#0f1623',
+                        cardhover: '#151f30',
+                        cybercyan: '#06b6d4',
+                        cyberemerald: '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #080c14;
+            color: #e2e8f0;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 15%, rgba(16, 185, 129, 0.07) 0px, transparent 50%);
+        }
+        .grid-bg {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+        .terminal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.14);
+        }
+        .node-active {
+            border-color: #06b6d4 !important;
+            background-color: rgba(6, 182, 212, 0.12) !important;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 grid-bg">
+
+    <!-- Top Sticky Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-[#080c14]/85 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand / Terminal Prompt -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-mono font-bold text-sm group-hover:border-cyan-400 transition">
+                    YK
+                </div>
+                <div class="font-mono text-sm">
+                    <span class="text-emerald-400 font-semibold">yegana</span><span class="text-slate-500">@</span><span class="text-cyan-400">sysadmin</span><span class="text-slate-400">:~$</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#haqqimda" class="hover:text-cyan-400 transition">Haqqımda</a>
+                <a href="#layiheler" class="hover:text-cyan-400 transition">Case Study-lər</a>
+                <a href="#arxitektura" class="hover:text-cyan-400 transition">İnfrastruktur Sxemi</a>
+                <a href="#bacariqlar" class="hover:text-cyan-400 transition">Texniki Stack</a>
+                <a href="#sertifikatlar" class="hover:text-cyan-400 transition">Sertifikatlar</a>
+            </nav>
+
+            <!-- CTA Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="#elaqe" class="px-4 py-2 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/40 text-xs sm:text-sm font-medium transition flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Əlaqə</span>
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800/70 text-slate-300 hover:text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0c121e] border-b border-slate-800 px-4 py-4 space-y-3 text-sm">
+            <a href="#haqqimda" class="block py-1.5 text-slate-300 hover:text-cyan-400">Haqqımda</a>
+            <a href="#layiheler" class="block py-1.5 text-slate-300 hover:text-cyan-400">Case Study-lər</a>
+            <a href="#arxitektura" class="block py-1.5 text-slate-300 hover:text-cyan-400">İnfrastruktur Sxemi</a>
+            <a href="#bacariqlar" class="block py-1.5 text-slate-300 hover:text-cyan-400">Texniki Stack</a>
+            <a href="#sertifikatlar" class="block py-1.5 text-slate-300 hover:text-cyan-400">Sertifikatlar</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="haqqimda" class="pt-12 pb-20 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            <!-- Left Content -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>NEO BOKT ASC • Kiçik Sistem Administratoru</span>
+                </div>
+
+                <div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Yeganə Kərimli
+                    </h1>
+                    <p class="mt-3 text-lg sm:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+                        Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi
+                    </p>
+                </div>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                    Linux (<span class="text-white font-medium">RHEL</span>) və <span class="text-white font-medium">Windows Server</span> mühitlərinin idarə olunması, Active Directory və Group Policy sərtləşdirilməsi, şəbəkə təhlükəsizliyi (<span class="text-white font-medium">FortiGate, pfSense, Nmap</span>), konteynerləşdirmə (<span class="text-white font-medium">Docker</span>) və veb xidmətlərin (<span class="text-white font-medium">NGINX, Cloudflare Tunnel, Postfix</span>) qurulması üzrə praktiki təcrübəyə malik mütəxəssis.
+                </p>
+
+                <!-- Key Certification Pills -->
+                <div class="flex flex-wrap gap-2.5 pt-1">
+                    <span class="px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-mono flex items-center gap-2">
+                        <i class="fa-brands fa-redhat text-sm"></i> RHCSA Certified
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-sm"></i> FortiGate 7.4 Operator
+                    </span>
+                    <span class="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-award text-sm"></i> Cybersecurity Honour Degree
+                    </span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-3">
+                    <a href="#layiheler" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-semibold text-sm transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                        <span>Layihələrə Bax (Case Studies)</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 font-medium text-sm transition flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-cyan-400 text-base"></i>
+                        <span>LinkedIn Profili</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Interactive Terminal -->
+            <div class="lg:col-span-5">
+                <div class="rounded-2xl bg-[#0b101b] border border-slate-800 shadow-2xl overflow-hidden">
+                    <!-- Terminal Top Bar -->
+                    <div class="px-4 py-3 bg-[#111827] border-b border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400">bash — root@yegana-infra:~</span>
+                        <button onclick="clearTerminal()" class="text-xs font-mono text-slate-500 hover:text-slate-300 transition" title="Təmizlə">clear</button>
+                    </div>
+
+                    <!-- Terminal Output Screen -->
+                    <div id="terminalOutput" class="p-4 h-72 overflow-y-auto terminal-scroll font-mono text-xs sm:text-sm space-y-3 text-slate-300">
+                        <div class="text-slate-400">
+                            Xoş gəldiniz! Sistem məlumatlarını yoxlamaq üçün aşağıdakı əmrlərə klikləyin və ya yazın:
+                        </div>
+                        <div>
+                            <span class="text-emerald-400">root@infra:~#</span> <span class="text-white">whoami</span>
+                            <div class="mt-1 text-cyan-300 pl-2 border-l-2 border-cyan-500/40">
+                                Yeganə Kərimli — Kiçik Sistem Administratoru @ NEO BOKT ASC<br>
+                                Fokus: Linux (RHEL), Windows AD/GPO, FortiGate, Docker, NGINX
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Preset Command Buttons -->
+                    <div class="px-3 py-2.5 bg-[#0e1524] border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                        <button onclick="runCommand('ls projects/')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700 text-xs font-mono text-slate-300 transition">ls projects/</button>
+                        <button onclick="runCommand('get-gpo')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700 text-xs font-mono text-slate-300 transition">get-gpo</button>
+                        <button onclick="runCommand('status postfix')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700 text-xs font-mono text-slate-300 transition">status postfix</button>
+                        <button onclick="runCommand('cat certs.txt')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-300 border border-slate-700 text-xs font-mono text-slate-300 transition">cat certs.txt</button>
+                    </div>
+
+                    <!-- Interactive Command Input -->
+                    <form id="terminalForm" class="px-4 py-2.5 bg-[#090d16] border-t border-slate-800 flex items-center gap-2 font-mono text-xs sm:text-sm">
+                        <span class="text-emerald-400 shrink-0">root@infra:~#</span>
+                        <input id="terminalInput" type="text" placeholder="help yazın..." autocomplete="off" class="w-full bg-transparent text-white focus:outline-none placeholder-slate-600">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS / HIGHLIGHTS STRIP -->
+    <section class="border-y border-slate-800/80 bg-[#0b101b]/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-4 rounded-xl bg-cardbg/60 border border-slate-800/80">
+                <div class="text-2xl sm:text-3xl font-bold text-cyan-400 font-mono">6+</div>
+                <div class="text-xs sm:text-sm text-slate-400 mt-1">Beynəlxalq İT &amp; Kibertəhlükəsizlik Sertifikatı</div>
+            </div>
+            <div class="p-4 rounded-xl bg-cardbg/60 border border-slate-800/80">
+                <div class="text-2xl sm:text-3xl font-bold text-emerald-400 font-mono">100%</div>
+                <div class="text-xs sm:text-sm text-slate-400 mt-1">Departament əsaslı AD OU &amp; GPO Standartlaşması</div>
+            </div>
+            <div class="p-4 rounded-xl bg-cardbg/60 border border-slate-800/80">
+                <div class="text-2xl sm:text-3xl font-bold text-purple-400 font-mono">End-to-End</div>
+                <div class="text-xs sm:text-sm text-slate-400 mt-1">GoPhish + Postfix Simulasiya &amp; Təlim Dövrəsi</div>
+            </div>
+            <div class="p-4 rounded-xl bg-cardbg/60 border border-slate-800/80">
+                <div class="text-2xl sm:text-3xl font-bold text-amber-400 font-mono">Zero-Trust</div>
+                <div class="text-xs sm:text-sm text-slate-400 mt-1">NGINX &amp; Cloudflare Tunnel ilə Təhlükəsiz Nəşr</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL CASE STUDIES SECTION -->
+    <section id="layiheler" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <span class="text-cyan-400 font-mono text-xs uppercase tracking-wider">// Praktiki Təcrübə &amp; İcra</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Real İnfrastruktur Case Study-ləri</h2>
+                <p class="text-slate-400 mt-2 max-w-2xl text-sm sm:text-base">
+                    İstehsalat və laboratoriya mühitlərində həyata keçirilmiş sistem inzibatçılığı, təhlükəsizlik sərtləşdirilməsi və şəbəkə memarlığı layihələri.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 transition" data-filter="all">Hamısı (4)</button>
+                <button onclick="filterProjects('security')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-400 border border-slate-800 hover:border-slate-700 transition" data-filter="security">Kibertəhlükəsizlik</button>
+                <button onclick="filterProjects('windows')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-400 border border-slate-800 hover:border-slate-700 transition" data-filter="windows">Windows &amp; AD</button>
+                <button onclick="filterProjects('linux')" class="filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-400 border border-slate-800 hover:border-slate-700 transition" data-filter="linux">Linux &amp; Şəbəkə</button>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- CASE STUDY 1: GoPhish + Postfix + Maarifləndirmə -->
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="security linux">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-mono">
+                            Security Awareness &amp; Mail Infra
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">CASE #01</span>
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                        Daxili Fişinq Simulasiyası (GoPhish + Postfix) və Əməkdaşların Maarifləndirilməsi
+                    </h3>
+
+                    <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+                        <p>
+                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Şirkət daxilində sosial mühəndislik və fişinq e-poçtlarına qarşı əməkdaşların həssaslıq səviyyəsini ölçmək və insan faktorundan yaranan təhlükəsizlik boşluqlarını aşkarlamaq.
+                        </p>
+                        <p>
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> RHEL Linux serveri üzərində <span class="text-white font-medium">Postfix Mail Transport Agent</span> qurularaq GoPhish platforması ilə inteqrasiya edildi. Realistik daxili bildiriş ssenarisi ilə test kampaniyası aparıldı. Nəticələrə əsasən 12 bölməlik <span class="text-white font-medium">"Kibercinayət hücumlarından qorunma"</span> təlim təqdimatı hazırlanaraq əməkdaşlara domen yoxlanışı, HTTP/HTTPS fərqi və insident bildirişi qaydaları izah edildi.
+                        </p>
+                    </div>
+
+                    <!-- Mini Live Stats Preview Box -->
+                    <div class="mt-5 p-4 rounded-xl bg-[#090d16] border border-slate-800/90">
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                            <span><i class="fa-solid fa-chart-pie text-cyan-400 mr-1.5"></i>GoPhish Kampaniya Metrikaları</span>
+                            <span class="text-emerald-400">postfix.service: active</span>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center font-mono">
+                            <div class="p-2 rounded bg-slate-900/90 border border-slate-800">
+                                <div class="text-emerald-400 font-bold text-base">100%</div>
+                                <div class="text-[10px] text-slate-400">Göndərildi</div>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/90 border border-slate-800">
+                                <div class="text-amber-400 font-bold text-base">80%</div>
+                                <div class="text-[10px] text-slate-400">Açıldı</div>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/90 border border-slate-800">
+                                <div class="text-orange-400 font-bold text-base">80%</div>
+                                <div class="text-[10px] text-slate-400">Link Klik</div>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900/90 border border-slate-800">
+                                <div class="text-cyan-400 font-bold text-base">0%</div>
+                                <div class="text-[10px] text-slate-400">Data İtkisi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">RHEL</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Postfix SMTP</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">GoPhish</span>
+                    </div>
+                    <button onclick="openCaseModal('case1')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
+                        <span>Texniki Detallar &amp; Sübutlar</span>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- CASE STUDY 2: Active Directory & GPO Hardening -->
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="windows security">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+                            Windows Server &amp; IAM Hardening
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">CASE #02</span>
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                        Active Directory OU Strukturu və Group Policy (GPO) Təhlükəsizlik Sərtləşdirilməsi
+                    </h3>
+
+                    <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+                        <p>
+                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Müxtəlif şöbələr üzrə işçi stansiyalarının vahid təhlükəsizlik standartına gətirilməsi, icazəsiz USB daşıyıcıları və komanda sətirləri vasitəsilə yarana biləcək risklərin qarşısının alınması.
+                        </p>
+                        <p>
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Departament əsaslı OU ağacı (<span class="text-white font-mono text-xs">Credit, Finance, HR, IT, PK, RISK, PC, SERVER</span>) təşkil edildi. <span class="text-white font-mono text-xs">USB_BLOCK</span>, <span class="text-white font-mono text-xs">CMD_BLOCK</span>, <span class="text-white font-mono text-xs">POWERSHELL_BLOCK</span> və <span class="text-white font-mono text-xs">PASSWORD_POLICY</span> (min. 8 simvol, mürəkkəblik, 5 səhv cəhddən sonra bloklanma) tətbiq olundu. İstifadəçilərin şifrə qaydalarını daim görməsi üçün xüsusi korporativ <span class="text-white font-medium">Lockscreen və Wallpaper</span> GPO-ları yayıldı.
+                        </p>
+                    </div>
+
+                    <!-- Mini Live GPO Preview Box -->
+                    <div class="mt-5 p-4 rounded-xl bg-[#090d16] border border-slate-800/90 font-mono text-xs">
+                        <div class="flex items-center justify-between text-slate-400 mb-2.5">
+                            <span><i class="fa-solid fa-sitemap text-emerald-400 mr-1.5"></i>Aktiv Təhlükəsizlik GPO-ları</span>
+                            <span class="text-cyan-400">GPMC • Enforced</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-emerald-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-usb"></i> USB_BLOCK
+                            </div>
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-emerald-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-terminal"></i> CMD_BLOCK
+                            </div>
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-emerald-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-code"></i> PS_BLOCK
+                            </div>
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-cyan-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-key"></i> PASS_POLICY
+                            </div>
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-cyan-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-lock"></i> LOCKSCREEN
+                            </div>
+                            <div class="px-2.5 py-1.5 rounded bg-slate-900 border border-slate-800 text-cyan-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-desktop"></i> WALLPAPER
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Active Directory</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">GPO / GPMC</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">PowerShell</span>
+                    </div>
+                    <button onclick="openCaseModal('case2')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
+                        <span>Texniki Detallar &amp; Sübutlar</span>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- CASE STUDY 3: NGINX Reverse Proxy & Cloudflare Tunnel -->
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="linux security">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                            Reverse Proxy &amp; Zero-Trust Access
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">CASE #03</span>
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                        NGINX Reverse Proxy və Cloudflare Tunnel ilə Daxili Xidmətlərin Təhlükəsiz Nəşri
+                    </h3>
+
+                    <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+                        <p>
+                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Lokal serverdə və Docker konteynerlərində işləyən daxili veb tətbiqlərə kənardan təhlükəsiz giriş təmin etmək, lakin router/firewall üzərində açıq inbound portlar (80/443 port forwarding) saxlamamaq.
+                        </p>
+                        <p>
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> Daxili xidmətlər <span class="text-white font-medium">Docker</span> konteynerlərində izolyasiya edildi və qarşısında <span class="text-white font-medium">NGINX Reverse Proxy</span> konfiqurasiya olunaraq domen əsaslı yönləndirmə (virtual host routing) quruldu. <span class="text-white font-medium">Cloudflare Tunnel (cloudflared)</span> inteqrasiyası ilə serverin real IP ünvanı tam gizlədildi və şifrələnmiş outbound tunel üzərindən DDoS/WAF qorumalı giriş əldə edildi.
+                        </p>
+                    </div>
+
+                    <!-- Traffic Flow Mini Diagram -->
+                    <div class="mt-5 p-4 rounded-xl bg-[#090d16] border border-slate-800/90 font-mono text-xs">
+                        <div class="text-slate-400 mb-2">Trafik Axını (Zero Inbound Ports):</div>
+                        <div class="flex items-center justify-between gap-1 text-[11px] text-center">
+                            <span class="px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-slate-300">İstifadəçi</span>
+                            <i class="fa-solid fa-arrow-right text-cyan-500"></i>
+                            <span class="px-2 py-1.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300">CF Tunnel</span>
+                            <i class="fa-solid fa-arrow-right text-cyan-500"></i>
+                            <span class="px-2 py-1.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">NGINX</span>
+                            <i class="fa-solid fa-arrow-right text-cyan-500"></i>
+                            <span class="px-2 py-1.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">NGINX</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Cloudflare Tunnel</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Docker</span>
+                    </div>
+                    <button onclick="openCaseModal('case3')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
+                        <span>Konfiqurasiya &amp; Arxitektura</span>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- CASE STUDY 4: FortiGate Firewall, Nmap & Yeastar PBX -->
+            <article class="project-card rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-7 flex flex-col justify-between glow-border transition" data-category="linux security windows">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono">
+                            Network Security &amp; Enterprise VoIP
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">CASE #04</span>
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+                        FortiGate 7.4 Firewall Siyasətləri, Nmap Təhlükəsizlik Auditi və Yeastar PBX İnteqrasiyası
+                    </h3>
+
+                    <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+                        <p>
+                            <strong class="text-cyan-400 font-mono text-xs uppercase">Problem:</strong> Korporativ şəbəkə perimetrinin zəifliklərdən qorunması, açıq portların nəzarət altına alınması, uzaqdan təhlükəsiz girişin təmin edilməsi və daxili IP telefoniya infrastrukturunun fasiləsiz işləməsi.
+                        </p>
+                        <p>
+                            <strong class="text-emerald-400 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-medium">FortiGate 7.4</span> və <span class="text-white font-medium">pfSense</span> firewall platformalarında trafik filtrləmə siyasətləri və şifrələnmiş VPN tunelləri sazlandı. <span class="text-white font-medium">Nmap</span> ilə şəbəkə skanlanması və açıq port auditi aparılaraq zəifliklər aradan qaldırıldı. Həmçinin <span class="text-white font-medium">Yeastar PBX</span> IP telefoniya və <span class="text-white font-medium">DFS</span> fayl paylaşımları təhlükəsiz şəkildə inteqrasiya edildi.
+                        </p>
+                    </div>
+
+                    <!-- Security & Services Badges -->
+                    <div class="mt-5 p-4 rounded-xl bg-[#090d16] border border-slate-800/90 font-mono text-xs">
+                        <div class="text-slate-400 mb-2">Perimetr &amp; Korporativ Servis Struktur:</div>
+                        <div class="grid grid-cols-3 gap-2 text-[11px]">
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                                <span class="text-cyan-400 block font-bold">FortiGate 7.4</span>
+                                <span class="text-slate-400">Policy &amp; VPN</span>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                                <span class="text-emerald-400 block font-bold">Nmap Audit</span>
+                                <span class="text-slate-400">Port &amp; Vuln Scan</span>
+                            </div>
+                            <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                                <span class="text-purple-400 block font-bold">Yeastar PBX</span>
+                                <span class="text-slate-400">Enterprise VoIP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">FortiGate 7.4</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">pfSense / Nmap</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800/90 text-slate-300">Yeastar PBX</span>
+                    </div>
+                    <button onclick="openCaseModal('case4')" class="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 font-semibold">
+                        <span>Şəbəkə Siyasətləri</span>
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE INFRASTRUCTURE TOPOLOGY SECTION -->
+    <section id="arxitektura" class="py-20 bg-[#0b101b]/90 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10">
+                <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider">// Sistem Memarlığı</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">İnteraktiv İnfrastruktur Topologiyası</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">
+                    Hər bir qovşağın üzərinə klikləyərək həmin təbəqədə tətbiq olunan təhlükəsizlik mexanizmlərini və protokolları nəzərdən keçirin.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Topology Visual Nodes -->
+                <div class="lg:col-span-7 rounded-2xl bg-[#080c14] border border-slate-800 p-6 flex flex-col justify-center space-y-6">
+                    
+                    <!-- Layer 1: Edge / Cloud -->
+                    <div class="flex justify-center">
+                        <button onclick="selectNode('edge')" id="node-edge" class="topo-node node-active w-full sm:w-80 p-4 rounded-xl bg-cardbg border-2 border-slate-700 text-left transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-amber-400">EDGE &amp; ZERO-TRUST</span>
+                                <i class="fa-solid fa-cloud text-amber-400"></i>
+                            </div>
+                            <div class="font-bold text-white mt-1">Cloudflare Tunnel &amp; WAF</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Real IP gizlədilməsi • SSL/TLS Terminasiya</div>
+                        </button>
+                    </div>
+
+                    <div class="flex justify-center text-slate-600">
+                        <i class="fa-solid fa-arrows-up-down text-lg"></i>
+                    </div>
+
+                    <!-- Layer 2: Perimeter Firewall -->
+                    <div class="flex justify-center">
+                        <button onclick="selectNode('firewall')" id="node-firewall" class="topo-node w-full sm:w-80 p-4 rounded-xl bg-cardbg border-2 border-slate-700 text-left transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-rose-400">PERIMETER SECURITY</span>
+                                <i class="fa-solid fa-fire-flame-curved text-rose-400"></i>
+                            </div>
+                            <div class="font-bold text-white mt-1">FortiGate 7.4 / pfSense Firewall</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Firewall Policies • VPN • Nmap Audit</div>
+                        </button>
+                    </div>
+
+                    <div class="flex justify-center text-slate-600">
+                        <i class="fa-solid fa-code-branch text-lg"></i>
+                    </div>
+
+                    <!-- Layer 3: Internal Servers -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button onclick="selectNode('windows')" id="node-windows" class="topo-node p-4 rounded-xl bg-cardbg border-2 border-slate-700 text-left transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-cyan-400">CORE • WINDOWS</span>
+                                <i class="fa-brands fa-windows text-cyan-400"></i>
+                            </div>
+                            <div class="font-bold text-white mt-1">Windows Server &amp; AD</div>
+                            <div class="text-xs text-slate-400 mt-0.5">GPO Hardening • DNS/DHCP • DFS</div>
+                        </button>
+
+                        <button onclick="selectNode('linux')" id="node-linux" class="topo-node p-4 rounded-xl bg-cardbg border-2 border-slate-700 text-left transition cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-emerald-400">CORE • LINUX (RHEL)</span>
+                                <i class="fa-brands fa-linux text-emerald-400"></i>
+                            </div>
+                            <div class="font-bold text-white mt-1">RHEL App &amp; Mail Node</div>
+                            <div class="text-xs text-slate-400 mt-0.5">NGINX • Docker • Postfix • GoPhish</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Node Details Inspector Panel -->
+                <div class="lg:col-span-5 rounded-2xl bg-cardbg border border-slate-800 p-6 sm:p-7 flex flex-col justify-between">
+                    <div id="nodeInspector">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-500">
+                        <span>Status: <span class="text-emerald-400">● Operational</span></span>
+                        <span>Audit: Nmap &amp; Log Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="bacariqlar" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-12">
+            <span class="text-cyan-400 font-mono text-xs uppercase tracking-wider">// Texniki Arsenal</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Texniki Bacarıqlar (Tech Stack)</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Skill Card 1 -->
+            <div class="rounded-2xl bg-cardbg border border-slate-800 p-6 hover:border-cyan-500/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg mb-4">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Sistem &amp; Server İnzibatçılığı</h3>
+                <ul class="space-y-2 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Windows Server (AD, GPO)</li>
+                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Linux (RHEL, Ubuntu)</li>
+                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> DNS, DHCP, DFS Shares</li>
+                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> IIS Manager</li>
+                    <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> PowerShell &amp; Bash</li>
+                </ul>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div class="rounded-2xl bg-cardbg border border-slate-800 p-6 hover:border-emerald-500/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg mb-4">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Şəbəkə &amp; Təhlükəsizlik</h3>
+                <ul class="space-y-2 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> FortiGate 7.4 Firewall</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> pfSense Firewall</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Nmap Zəiflik Skanı</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> TCP/IP &amp; VPN Tunellər</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> GoPhish Simulasiya</li>
+                </ul>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div class="rounded-2xl bg-cardbg border border-slate-800 p-6 hover:border-purple-500/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg mb-4">
+                    <i class="fa-brands fa-docker"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Konteyner &amp; Veb Xidmətlər</h3>
+                <ul class="space-y-2 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Docker Konteynerlər</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> NGINX Reverse Proxy</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Cloudflare Tunnel</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Postfix Mail Server</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> SSL/TLS Sertifikatlar</li>
+                </ul>
+            </div>
+
+            <!-- Skill Card 4 -->
+            <div class="rounded-2xl bg-cardbg border border-slate-800 p-6 hover:border-amber-500/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg mb-4">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Virtualizasiya &amp; Korporativ</h3>
+                <ul class="space-y-2 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> VMware Workstation / ESXi</li>
+                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> Yeastar PBX IP Telefoniya</li>
+                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> 1C Enterprise Dəstəyi</li>
+                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> Microsoft Outlook &amp; M365</li>
+                    <li class="flex items-center gap-2"><span class="text-amber-400">▹</span> İT Texniki Sənədləşmə</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS, EXPERIENCE & EDUCATION -->
+    <section id="sertifikatlar" class="py-20 bg-[#0b101b]/90 border-t border-slate-800/80 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Left: Certifications (7 cols) -->
+            <div class="lg:col-span-7">
+                <span class="text-cyan-400 font-mono text-xs uppercase tracking-wider">// Akkreditasiya</span>
+                <h2 class="text-3xl font-bold text-white mt-1 mb-6">Sertifikatlar</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- RHCSA -->
+                    <div class="p-5 rounded-xl bg-cardbg border border-red-500/30 hover:border-red-400 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-red-400 font-mono text-xs font-bold">RED HAT</span>
+                            <i class="fa-brands fa-redhat text-red-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">RHCSA — Red Hat Certified System Administrator</h3>
+                        <p class="text-xs text-slate-400 mt-1">RHEL sistemlərinin administrasiyası, SELinux, saxlama və təhlükəsizlik.</p>
+                    </div>
+
+                    <!-- FortiGate 7.4 -->
+                    <div class="p-5 rounded-xl bg-cardbg border border-cyan-500/30 hover:border-cyan-400 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-cyan-400 font-mono text-xs font-bold">FORTINET</span>
+                            <i class="fa-solid fa-shield-halved text-cyan-400 text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">FCA — FortiGate 7.4 Operator</h3>
+                        <p class="text-xs text-slate-400 mt-1">Next-Gen Firewall siyasətləri, NAT, VPN və şəbəkə təhlükəsizliyi.</p>
+                    </div>
+
+                    <!-- RH124 & RH134 -->
+                    <div class="p-5 rounded-xl bg-cardbg border border-slate-800 hover:border-slate-700 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-red-300 font-mono text-xs font-bold">RED HAT ACADEMY</span>
+                            <i class="fa-solid fa-terminal text-slate-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">RH124 &amp; RH134</h3>
+                        <p class="text-xs text-slate-400 mt-1">Red Hat System Administration I &amp; II tam proqramı.</p>
+                    </div>
+
+                    <!-- Fortinet Fundamentals -->
+                    <div class="p-5 rounded-xl bg-cardbg border border-slate-800 hover:border-slate-700 transition">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-emerald-400 font-mono text-xs font-bold">FORTINET</span>
+                            <i class="fa-solid fa-lock text-emerald-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Certified Fundamentals in Cybersecurity</h3>
+                        <p class="text-xs text-slate-400 mt-1">Kibertəhdidlər, şəbəkə müdafiəsi və təhlükəsizlik arxitekturası.</p>
+                    </div>
+
+                    <!-- Certiport -->
+                    <div class="p-5 rounded-xl bg-cardbg border border-slate-800 hover:border-slate-700 transition sm:col-span-2">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-amber-400 font-mono text-xs font-bold">CERTIPORT</span>
+                            <i class="fa-solid fa-certificate text-amber-400"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Information Technology Specialist</h3>
+                        <p class="text-xs text-slate-400 mt-1">İT infrastruktur, əməliyyat sistemləri və şəbəkə əsasları üzrə beynəlxalq sertifikat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Experience & Education (5 cols) -->
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider">// Karyera</span>
+                    <h2 class="text-3xl font-bold text-white mt-1 mb-6">İş Təcrübəsi</h2>
+                    
+                    <div class="p-6 rounded-2xl bg-cardbg border border-slate-800 relative">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <span class="px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300 font-mono text-xs">20.07.2026 – Hal-hazırda</span>
+                            <span class="text-xs font-mono text-slate-400">Bakı, Azərbaycan</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Kiçik Sistem Administratoru</h3>
+                        <div class="text-cyan-400 font-medium text-sm mb-3">NEO BOKT ASC • İnformasiya Texnologiyaları</div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li>• Active Directory istifadəçi/kompüter idarəetməsi və departament əsaslı GPO təhlükəsizlik siyasətlərinin tətbiqi.</li>
+                            <li>• Linux və Windows serverlərinin administrasiyası, DFS paylaşımları və ehtiyat nüsxələmə nəzarəti.</li>
+                            <li>• Daxili fişinq simulasiyalarının təşkili və əməkdaşlar üçün kibertəhlükəsizlik maarifləndirməsi.</li>
+                            <li>• Yeastar PBX IP telefoniya, FortiGate şəbəkə dəstəyi və korporativ 1C/Outlook sistemlərinin sazlanması.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-purple-400 font-mono text-xs uppercase tracking-wider">// Akademik Baza</span>
+                    <h2 class="text-2xl font-bold text-white mt-1 mb-4">Təhsil</h2>
+                    
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="flex justify-between items-center text-xs font-mono text-cyan-400">
+                                <span>Bakı Dövlət Universiteti</span>
+                                <span>2022 – 2026</span>
+                            </div>
+                            <div class="font-bold text-white text-sm mt-1">Riyaziyyat (Bakalavr)</div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-cardbg border border-slate-800">
+                            <div class="flex justify-between items-center text-xs font-mono text-amber-400">
+                                <span>Code Academy</span>
+                                <span>2024 – 2025</span>
+                            </div>
+                            <div class="font-bold text-white text-sm mt-1">Cybersecurity Fundamentals • <span class="text-amber-300">Honour Degree</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <footer id="elaqe" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="rounded-3xl bg-gradient-to-br from-[#101827] to-[#0b101b] border border-slate-800 p-8 sm:p-12 text-center">
+            <span class="text-cyan-400 font-mono text-xs uppercase tracking-wider">// Əlaqə Qurun</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">İnfrastruktur və ya Təhlükəsizlik Layihələri Üçün</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mt-3 text-sm sm:text-base">
+                Sistem inzibatçılığı, şəbəkə təhlükəsizliyi və İT infrastruktur imkanları ilə bağlı birbaşa əlaqə saxlaya bilərsiniz.
+            </p>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <!-- Copy Email Button -->
+                <button onclick="copyEmail()" class="px-5 py-3.5 rounded-xl bg-cardbg hover:bg-slate-800 border border-slate-700 text-slate-200 text-sm font-mono flex items-center gap-2.5 transition">
+                    <i class="fa-solid fa-envelope text-cyan-400"></i>
+                    <span id="emailText">yeganakarimlii@gmail.com</span>
+                    <i class="fa-regular fa-copy text-slate-500 text-xs"></i>
+                </button>
+
+                <!-- Phone Link -->
+                <a href="tel:+994558114017" class="px-5 py-3.5 rounded-xl bg-cardbg hover:bg-slate-800 border border-slate-700 text-slate-200 text-sm font-mono flex items-center gap-2.5 transition">
+                    <i class="fa-solid fa-phone text-emerald-400"></i>
+                    <span>+994 55 811 40 17</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/yegana-karimli-516b39333/" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 text-sm font-mono flex items-center gap-2.5 transition">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+
+            <!-- Toast Notification for Clipboard -->
+            <div id="copyToast" class="hidden mt-4 inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono">
+                ✓ E-poçt ünvanı buferə kopyalandı!
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-slate-800/80 text-xs font-mono text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <span>© 2026 Yeganə Kərimli. Bütün hüquqlar qorunur.</span>
+                <span>Built with Linux &amp; Security Mindset</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CASE STUDY MODAL -->
+    <div id="caseModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-[#0e1523] border border-slate-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-[#121b2d] px-6 py-4 border-b border-slate-800 flex items-center justify-between z-10">
+                <div class="flex items-center gap-2 font-mono text-xs text-cyan-400">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span id="modalTag">CASE STUDY</span>
+                </div>
+                <button onclick="closeCaseModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-rose-500/20 hover:text-rose-400 text-slate-400 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div id="modalBody" class="p-6 sm:p-8 space-y-6">
+                <!-- Dynamic Content Injected Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Interactive Terminal Simulator
+        const terminalOutput = document.getElementById('terminalOutput');
+        const terminalForm = document.getElementById('terminalForm');
+        const terminalInput = document.getElementById('terminalInput');
+
+        const commandResponses = {
+            'help': `Mövcud əmrlər:<br>
+                     • <span class="text-cyan-300">whoami</span> — Profil və vəzifə xülasəsi<br>
+                     • <span class="text-cyan-300">ls projects/</span> — İcra olunmuş infrastruktur layihələri<br>
+                     • <span class="text-cyan-300">get-gpo</span> — Aktiv Active Directory GPO siyahısı<br>
+                     • <span class="text-cyan-300">status postfix</span> — Mail server xidmətinin statusu<br>
+                     • <span class="text-cyan-300">cat certs.txt</span> — Sertifikatlar siyahısı`,
+            'whoami': `Yeganə Kərimli — Kiçik Sistem Administratoru @ NEO BOKT ASC<br>Fokus: Linux (RHEL), Windows AD/GPO, FortiGate, Docker, NGINX`,
+            'ls projects/': `drwxr-xr-x  01-gophish-postfix-awareness/<br>drwxr-xr-x  02-ad-gpo-security-hardening/<br>drwxr-xr-x  03-nginx-cloudflare-tunnel/<br>drwxr-xr-x  04-fortigate-firewall-audit/`,
+            'get-gpo': `DisplayName               GpoStatus   Target<br>-----------               ---------   ------<br>USB_BLOCK                 Enabled     PC / Departments<br>CMD_BLOCK                 Enabled     All Users (OU)<br>POWERSHELL_BLOCK          Enabled     All Users (OU)<br>PASSWORD_POLICY           Enabled     Domain (MinLen: 8, Lockout: 5)<br>LOCKSCREEN & WALLPAPER    Enabled     Corporate Standard`,
+            'status postfix': `● postfix.service - Postfix Mail Transport Agent<br>   Loaded: loaded (/usr/lib/systemd/system/postfix.service; enabled)<br>   Active: <span class="text-emerald-400 font-bold">active (running)</span> — GoPhish SMTP Relay Ready`,
+            'cat certs.txt': `[1] RHCSA - Red Hat Certified System Administrator<br>[2] FCA - FortiGate 7.4 Operator<br>[3] Fortinet Certified Fundamentals in Cybersecurity<br>[4] RH124 & RH134 Red Hat System Administration I & II<br>[5] Certiport Information Technology Specialist`
+        };
+
+        function runCommand(cmd) {
+            const cleanCmd = cmd.trim().toLowerCase();
+            if (!cleanCmd) return;
+
+            if (cleanCmd === 'clear') {
+                clearTerminal();
+                return;
+            }
+
+            const response = commandResponses[cleanCmd] || `<span class="text-rose-400">bash: ${cmd}: əmr tapılmadı.</span> Mövcud əmrlər üçün <span class="text-cyan-300">help</span> yazın.`;
+            
+            const block = document.createElement('div');
+            block.innerHTML = `
+                <span class="text-emerald-400">root@infra:~#</span> <span class="text-white">${cmd}</span>
+                <div class="mt-1 text-slate-300 pl-2 border-l-2 border-slate-700 leading-relaxed">${response}</div>
+            `;
+            terminalOutput.appendChild(block);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        function clearTerminal() {
+            terminalOutput.innerHTML = '<div class="text-slate-500">Terminal təmizləndi. Əmr daxil edin və ya düymələrdən istifadə edin.</div>';
+        }
+
+        terminalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            runCommand(terminalInput.value);
+            terminalInput.value = '';
+        });
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'filter-btn active px-3.5 py-2 rounded-lg text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 transition';
+                } else {
+                    btn.className = 'filter-btn px-3.5 py-2 rounded-lg text-xs font-mono bg-cardbg text-slate-400 border border-slate-800 hover:border-slate-700 transition';
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Interactive Infrastructure Topology Data
+        const nodeDetails = {
+            edge: {
+                badge: 'EDGE & ZERO-TRUST LAYER',
+                title: 'Cloudflare Tunnel & WAF Mühafizəsi',
+                desc: 'Daxili veb xidmətlərin xarici dünyaya birbaşa port açmadan (Zero Inbound Ports) təhlükəsiz çıxarılması.',
+                points: [
+                    'Serverin real public IP ünvanı tamamilə gizlədilir (Origin IP Protection).',
+                    'Outbound şifrələnmiş cloudflared tuneli ilə NAT/Firewall keçidi.',
+                    'Avtomatik SSL/TLS sertifikat idarəetməsi və DDoS filtrasiyası.',
+                    'Yalnız icazəli subdomenlər üzərindən daxili NGINX proxy-ə yönləndirmə.'
+                ]
+            },
+            firewall: {
+                badge: 'PERIMETER & NETWORK SECURITY',
+                title: 'FortiGate 7.4 & pfSense Firewall',
+                desc: 'Şəbəkə sərhədinin qorunması, trafik filtrasiyası və zəifliklərin mütəmadi auditi.',
+                points: [
+                    'Least-Privilege prinsipinə əsaslanan Firewall Policy və trafik filtrləmə qaydaları.',
+                    'Uzaqdan təhlükəsiz qoşulma üçün şifrələnmiş VPN tunellərinin sazlanması.',
+                    'Nmap skanları ilə açıq portların və xidmətlərin mütəmadi təhlükəsizlik auditi.',
+                    'Yeastar PBX IP telefoniya və korporativ servislər üçün etibarlı marşrutlaşdırma.'
+                ]
+            },
+            windows: {
+                badge: 'WINDOWS SERVER & IAM',
+                title: 'Active Directory & Group Policy Hardening',
+                desc: 'Korporativ domen mühitində mərkəzləşdirilmiş kimlik və cihaz təhlükəsizliyi idarəetməsi.',
+                points: [
+                    'Departament əsaslı OU strukturu (Credit, Finance, HR, IT, PK, RISK).',
+                    'USB_BLOCK, CMD_BLOCK və POWERSHELL_BLOCK ilə zərərli icra qarşısının alınması.',
+                    'Domain Password Policy: Min. 8 simvol, mürəkkəblik və 5 cəhddən sonra Account Lockout.',
+                    'Şifrə siyasəti qaydalarını əks etdirən xüsusi korporativ Lockscreen GPO-su.'
+                ]
+            },
+            linux: {
+                badge: 'RHEL LINUX & CONTAINERS',
+                title: 'RHEL İnfrastruktur, NGINX, Docker & Postfix',
+                desc: 'Yüksək dayanıqlı Linux server mühitində veb və poçt xidmətlərinin orkestrasiyası.',
+                points: [
+                    'NGINX Reverse Proxy ilə daxili xidmətlərin vahid giriş nöqtəsindən yönləndirilməsi.',
+                    'Docker konteynerləri vasitəsilə xidmətlərin izolyasiyalı işlədilməsi.',
+                    'RHEL üzərində Postfix Mail Transport Agent (MTA) konfiqurasiyası.',
+                    'GoPhish platforması ilə nəzarətli fişinq testlərinin aparılması.'
+                ]
+            }
+        };
+
+        function selectNode(nodeKey) {
+            document.querySelectorAll('.topo-node').forEach(el => el.classList.remove('node-active'));
+            document.getElementById('node-' + nodeKey).classList.add('node-active');
+
+            const data = nodeDetails[nodeKey];
+            const inspector = document.getElementById('nodeInspector');
+            inspector.innerHTML = `
+                <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-mono text-xs">${data.badge}</span>
+                <h3 class="text-2xl font-bold text-white mt-3">${data.title}</h3>
+                <p class="text-slate-400 text-sm mt-2 leading-relaxed">${data.desc}</p>
+                <div class="mt-5 space-y-2.5">
+                    ${data.points.map(p => `
+                        <div class="flex items-start gap-2.5 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-1 text-xs"></i>
+                            <span>${p}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        // Initialize first node
+        selectNode('edge');
+
+        // Case Study Modal Content
+        const modalContents = {
+            case1: {
+                tag: 'CASE #01 • PHISHING SIMULATION & SECURITY AWARENESS',
+                html: `
+                    <h2 class="text-2xl font-bold text-white">GoPhish + Postfix SMTP Simulasiyası və Kibertəhlükəsizlik Maarifləndirməsi</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Bu layihə iki mərhələdə icra edilmişdir: əvvəlcə RHEL serveri üzərində local Postfix mail serveri və GoPhish platforması qurulmuş, daha sonra kampaniya nəticələri əsasında əməkdaşlar üçün praktiki təlim təqdimatı hazırlanmışdır.
+                    </p>
+                    
+                    <!-- Simulated Postfix + GoPhish Visual Evidence -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-[#080c14] border border-slate-800 font-mono text-xs">
+                            <div class="text-emerald-400 font-bold mb-2">$ systemctl status postfix.service</div>
+                            <div class="text-slate-400 space-y-1">
+                                <div>Loaded: loaded (/usr/lib/systemd/system/postfix.service; <span class="text-emerald-400">enabled</span>)</div>
+                                <div>Active: <span class="text-emerald-400 font-bold">active (running)</span></div>
+                                <div>Daemon: postfix/master version 3.5.25</div>
+                                <div>Config: /etc/postfix (SMTP Relay Configured)</div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-[#080c14] border border-slate-800">
+                            <div class="text-cyan-400 font-mono text-xs font-bold mb-2">Maarifləndirmə Təqdimatı (12 Slayd)</div>
+                            <ul class="text-xs text-slate-300 space-y-1.5">
+                                <li>• Rəsmi domen vs saxta (typosquatting) domenlərin analizi</li>
+                                <li>• Keçidə klikləmədən əvvəl URL önizləməsinin yoxlanılması</li>
+                                <li>• HTTP (şifrələnməmiş) və HTTPS (SSL/TLS) trafik fərqi</li>
+                                <li>• Güclü şifrə standartları, MFA və şübhəli halın İT-yə bildirilməsi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Custom Screenshot Uploader for Live Portfolio Customization -->
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-dashed border-slate-700">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-image text-cyan-400 mr-1.5"></i>Real Screenshot Önizləməsi (GoPhish / Postfix)</span>
+                            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono transition">
+                                + Şəkil Yüklə (PNG/JPG)
+                                <input type="file" accept="image/*" class="hidden" onchange="previewUploadedImage(event, 'preview-case1')">
+                            </label>
+                        </div>
+                        <img id="preview-case1" class="hidden mt-3 rounded-lg border border-slate-700 max-h-72 mx-auto object-contain" alt="Case 1 Screenshot">
+                    </div>
+                `
+            },
+            case2: {
+                tag: 'CASE #02 • ACTIVE DIRECTORY & GPO HARDENING',
+                html: `
+                    <h2 class="text-2xl font-bold text-white">Active Directory OU Strukturu, GPO Sərtləşdirilməsi və Korporativ Lockscreen</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Korporativ domendə təhlükəsizlik siyasətlərini şöbələr üzrə çevik idarə etmək üçün OU iyerarxiyası qurulmuş, terminal alətləri və xarici yaddaş qurğuları məhdudlaşdırılmışdır.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- PowerShell Output -->
+                        <div class="p-4 rounded-xl bg-[#080c14] border border-slate-800 font-mono text-xs">
+                            <div class="text-amber-300 font-bold mb-2">PS C:\&gt; Get-ADDefaultDomainPasswordPolicy</div>
+                            <div class="text-slate-300 space-y-1">
+                                <div>ComplexityEnabled           : <span class="text-emerald-400">True</span></div>
+                                <div>LockoutThreshold            : <span class="text-cyan-400">5</span></div>
+                                <div>LockoutDuration             : 00:30:00</div>
+                                <div>MaxPasswordAge              : 60.00:00:00</div>
+                                <div>MinPasswordLength           : <span class="text-cyan-400">8</span></div>
+                                <div>PasswordHistoryCount        : 8</div>
+                                <div>ReversibleEncryptionEnabled : False</div>
+                            </div>
+                        </div>
+
+                        <!-- Lockscreen Policy Card -->
+                        <div class="p-4 rounded-xl bg-gradient-to-br from-blue-950 to-slate-900 border border-blue-500/30 text-xs">
+                            <div class="text-cyan-300 font-bold mb-2"><i class="fa-solid fa-lock mr-1.5"></i>Korporativ Lockscreen Siyasət Ekranı</div>
+                            <p class="text-slate-300 mb-2">Bütün işçi stansiyalarının kilid ekranına GPO ilə tətbiq olunan yaddaş qaydaları:</p>
+                            <ul class="text-slate-200 space-y-1">
+                                <li>1. Şifrələr ən azı 8 simvoldan ibarət olmalıdır.</li>
+                                <li>2. Böyük/kiçik hərflər, rəqəm və xüsusi simvollar (!, @, #, %).</li>
+                                <li>3. Son istifadə olunmuş şifrələrin təkrar istifadəsinə qadağa.</li>
+                                <li>4. İT Texniki Dəstək daxili nömrəsi əks olunub.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-dashed border-slate-700">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-image text-cyan-400 mr-1.5"></i>Real Screenshot Önizləməsi (GPMC / Lockscreen)</span>
+                            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono transition">
+                                + Şəkil Yüklə (PNG/JPG)
+                                <input type="file" accept="image/*" class="hidden" onchange="previewUploadedImage(event, 'preview-case2')">
+                            </label>
+                        </div>
+                        <img id="preview-case2" class="hidden mt-3 rounded-lg border border-slate-700 max-h-72 mx-auto object-contain" alt="Case 2 Screenshot">
+                    </div>
+                `
+            },
+            case3: {
+                tag: 'CASE #03 • NGINX REVERSE PROXY & CLOUDFLARE TUNNEL',
+                html: `
+                    <h2 class="text-2xl font-bold text-white">NGINX Reverse Proxy &amp; Cloudflare Tunnel Arxitekturası</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Lokal mühitdə çalışan veb tətbiqlərin təhlükəsiz şəkildə yayımlanması üçün port açmadan (port-forwarding olmadan) Zero-Trust yanaşması tətbiq edilmişdir.
+                    </p>
+                    <div class="p-4 rounded-xl bg-[#080c14] border border-slate-800 font-mono text-xs text-slate-300">
+                        <div class="text-cyan-400 mb-2"># /etc/nginx/conf.d/internal-service.conf (Nümunə Struktur)</div>
+                        <pre class="overflow-x-auto text-slate-300">server {
+    listen 80;
+    server_name app.internal.local;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+}</pre>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-900/80 border border-dashed border-slate-700">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-xs font-mono text-slate-400"><i class="fa-solid fa-image text-cyan-400 mr-1.5"></i>Real Screenshot Önizləməsi (NGINX / Tunnel)</span>
+                            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 text-xs font-mono transition">
+                                + Şəkil Yüklə (PNG/JPG)
+                                <input type="file" accept="image/*" class="hidden" onchange="previewUploadedImage(event, 'preview-case3')">
+                            </label>
+                        </div>
+                        <img id="preview-case3" class="hidden mt-3 rounded-lg border border-slate-700 max-h-72 mx-auto object-contain" alt="Case 3 Screenshot">
+                    </div>
+                `
+            },
+            case4: {
+                tag: 'CASE #04 • FORTIGATE FIREWALL, NMAP AUDIT & YEASTAR PBX',
+                html: `
+                    <h2 class="text-2xl font-bold text-white">FortiGate 7.4 Firewall, Nmap Təhlükəsizlik Auditi və Korporativ Servislər</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Korporativ şəbəkə perimetrinin təhlükəsizliyini təmin etmək üçün firewall siyasətləri sərtləşdirilmiş, Nmap vasitəsilə açıq portlar analiz edilmiş və Yeastar PBX IP telefoniya sistemi inteqrasiya olunmuşdur.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-300 bg-[#080c14] p-4 rounded-xl border border-slate-800">
+                        <li><strong class="text-cyan-400 font-mono">FortiGate 7.4 &amp; pfSense:</strong> Trafik filtrləmə siyasətləri, NAT və şifrələnmiş VPN bağlantıları.</li>
+                        <li><strong class="text-emerald-400 font-mono">Nmap Audit:</strong> Daxili şəbəkə diapazonlarında açıq portların və servis versiyalarının yoxlanılması.</li>
+                        <li><strong class="text-purple-400 font-mono">Yeastar PBX &amp; DFS:</strong> Korporativ IP telefoniya sazlanması və mərkəzləşdirilmiş fayl paylaşımlarının icazə matrisi.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openCaseModal(caseId) {
+            const modal = document.getElementById('caseModal');
+            const data = modalContents[caseId];
+            document.getElementById('modalTag').textContent = data.tag;
+            document.getElementById('modalBody').innerHTML = data.html;
+            modal.classList.remove('hidden');
+        }
+
+        function closeCaseModal() {
+            document.getElementById('caseModal').classList.add('hidden');
+        }
+
+        // Close modal on outside click
+        document.getElementById('caseModal').addEventListener('click', (e) => {
+            if (e.target.id === 'caseModal') closeCaseModal();
+        });
+
+        // Preview uploaded screenshots dynamically in browser
+        function previewUploadedImage(event, imgId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById(imgId);
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Copy Email to Clipboard
+        function copyEmail() {
+            const email = document.getElementById('emailText').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('copyToast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+    </script>
+</body>
+</html>
