@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeganə Kərimli | Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi</title>
+    <title>Yeganə Kərimli | Sistem Administratoru</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,7 +118,7 @@
                         Yeganə Kərimli
                     </h1>
                     <p class="mt-3 text-lg sm:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">
-                        Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi
+                        Sistem Administratoru
                     </p>
                 </div>
 
@@ -732,7 +732,7 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
                 <div class="text-2xl font-bold text-white">Yeganə Kərimli</div>
-                <p class="text-slate-300 text-sm mt-1">Sistem Administratoru &amp; İT İnfrastruktur Mütəxəssisi</p>
+                <p class="text-slate-300 text-sm mt-1">Sistem Administratoru</p>
             </div>
 
             <div class="flex flex-wrap items-center gap-3">
@@ -919,7 +919,7 @@
             case3: `
                 <div class="text-xs font-mono text-emerald-300">CASE #03 • DOCKER, NGINX &amp; DNS</div>
                 <h3 class="text-2xl font-bold text-white">Docker Konteynerləri, NGINX və Domen Sazlanması</h3>
-                <p>Azure Linux VM-ləri üzərində Docker konteyneri və NGINX sazlanıb, DNS A qeydi ilə sayt canlıya çıxarılıb.</p>
+                <p>Azure Linux VM-ləri üzərində Docker konteyneri və NGINX Reverse Proxy sazlanıb, DNS A qeydi ilə sayt canlıya çıxarılıb.</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-1">
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
@@ -927,7 +927,7 @@
                         <div class="mt-1.5 text-[11px] font-mono text-slate-300">Azure Docker &amp; NGINX VM-lər</div>
                     </div>
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
-                        <img src="2.jpg" alt="systemctl status docker" onclick="openLightbox('2.jpg', 'systemctl enable --now docker &amp; status docker')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <img src="2.png" alt="systemctl status docker" onclick="openLightbox('2.png', 'systemctl enable --now docker &amp; status docker')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
                         <div class="mt-1.5 text-[11px] font-mono text-slate-300">Docker servisi (active)</div>
                     </div>
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
@@ -939,11 +939,31 @@
                         <div class="mt-1.5 text-[11px] font-mono text-slate-300">curl cavab testi</div>
                     </div>
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
+                        <img src="NG%C4%B0NX%20konfig.png" alt="NGINX Reverse Proxy Konfiqurasiyası" onclick="openLightbox('NG%C4%B0NX%20konfig.png', 'NGINX Reverse Proxy Konfiqurasiyası')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">NGINX konfiqurasiyası</div>
+                    </div>
+                    <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
+                        <img src="nginx%20config%20detail.png" alt="NGINX Config Detalları" onclick="openLightbox('nginx%20config%20detail.png', 'NGINX Server Block &amp; Proxy Pass detalları')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">NGINX config detalları</div>
+                    </div>
+                    <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
+                        <img src="syntax%20check.png" alt="nginx -t syntax check" onclick="openLightbox('syntax%20check.png', 'nginx -t — Konfiqurasiya sintaksis yoxlanışı')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">NGINX syntax check (nginx -t)</div>
+                    </div>
+                    <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
+                        <img src="curl%20result.png" alt="NGINX curl nəticəsi" onclick="openLightbox('curl%20result.png', 'NGINX Reverse Proxy curl nəticəsi')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">Proxy curl nəticəsi</div>
+                    </div>
+                    <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
+                        <img src="dns%20record.png" alt="DNS Record Sazlanması" onclick="openLightbox('dns%20record.png', 'DNS Record sazlanması')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <div class="mt-1.5 text-[11px] font-mono text-slate-300">DNS Record sazlanması</div>
+                    </div>
+                    <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
                         <img src="6.png" alt="GoDaddy DNS A Record" onclick="openLightbox('6.png', 'DNS A qeydi (@ -> 52.184.80.189)')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
                         <div class="mt-1.5 text-[11px] font-mono text-slate-300">DNS A qeydi (NGINX IP)</div>
                     </div>
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
-                        <img src="5.jpg" alt="https://gridx.digital" onclick="openLightbox('5.jpg', 'Canlı sayt — https://gridx.digital')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
+                        <img src="7.png" alt="Canlı domen" onclick="openLightbox('7.png', 'Canlı domen')" class="w-full h-28 object-cover rounded-lg cursor-zoom-in border border-slate-700">
                         <div class="mt-1.5 text-[11px] font-mono text-slate-300">Canlı domen</div>
                     </div>
                     <div class="rounded-xl bg-[#162032] border border-slate-600/70 p-2">
