@@ -127,15 +127,15 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2.5 pt-1">
-                    <span class="px-3 py-1.5 rounded-lg bg-red-500/15 border border-red-400/40 text-red-200 text-xs font-mono flex items-center gap-2">
+                    <a href="#sertifikatlar" class="px-3 py-1.5 rounded-lg bg-red-500/15 hover:bg-red-500/25 border border-red-400/40 text-red-200 text-xs font-mono flex items-center gap-2 transition">
                         <i class="fa-brands fa-redhat text-sm"></i> RHCSA Certified
-                    </span>
-                    <span class="px-3 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-400/40 text-cyan-200 text-xs font-mono flex items-center gap-2">
+                    </a>
+                    <a href="#sertifikatlar" class="px-3 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 text-cyan-200 text-xs font-mono flex items-center gap-2 transition">
                         <i class="fa-solid fa-shield-halved text-sm"></i> FortiGate 7.4 Operator
-                    </span>
-                    <span class="px-3 py-1.5 rounded-lg bg-amber-500/15 border border-amber-400/40 text-amber-200 text-xs font-mono flex items-center gap-2">
+                    </a>
+                    <a href="#sertifikatlar" class="px-3 py-1.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/40 text-amber-200 text-xs font-mono flex items-center gap-2 transition">
                         <i class="fa-solid fa-award text-sm"></i> Cybersecurity Honour Degree
-                    </span>
+                    </a>
                 </div>
 
                 <div class="flex flex-wrap items-center gap-4 pt-3">
@@ -571,47 +571,136 @@
     <section id="sertifikatlar" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div class="lg:col-span-7">
-                <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Rəsmi Təsdiqlər</span>
-                <h2 class="text-3xl font-bold text-white mt-1 mb-6">Sertifikatlar</h2>
+                <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Rəsmi Təsdiqlər &amp; PDF Yükləmə</span>
+                <h2 class="text-3xl font-bold text-white mt-1 mb-2">Sertifikatlar</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mb-6">
+                    Hər bir sertifikata birbaşa brauzerdə baxa və ya PDF formatında yükləyə bilərsiniz.
+                </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 flex items-start gap-3.5">
-                        <i class="fa-brands fa-redhat text-red-400 text-xl mt-0.5"></i>
-                        <div>
-                            <div class="font-bold text-white text-sm">RHCSA</div>
-                            <div class="text-xs text-slate-300">Red Hat Certified System Administrator</div>
+                    <!-- RHCSA -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-red-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-brands fa-redhat text-red-400 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">RHCSA</div>
+                                <div class="text-xs text-slate-300">Red Hat Certified System Administrator</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20RHCSA.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20RHCSA.pdf" download="Yegana Karimli RHCSA.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 flex items-start gap-3.5">
-                        <i class="fa-solid fa-shield text-cyan-300 text-xl mt-0.5"></i>
-                        <div>
-                            <div class="font-bold text-white text-sm">FCA — FortiGate 7.4 Operator</div>
-                            <div class="text-xs text-slate-300">Fortinet Certified Associate</div>
+                    <!-- FCA -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-cyan-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-solid fa-shield text-cyan-300 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">FCA — FortiGate 7.4 Operator</div>
+                                <div class="text-xs text-slate-300">Fortinet Certified Associate</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20FCA.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20FCA.pdf" download="Yegana Karimli FCA.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 flex items-start gap-3.5">
-                        <i class="fa-solid fa-shield-halved text-emerald-300 text-xl mt-0.5"></i>
-                        <div>
-                            <div class="font-bold text-white text-sm">Fortinet Certified Fundamentals</div>
-                            <div class="text-xs text-slate-300">Fundamentals in Cybersecurity</div>
+                    <!-- FCF -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-emerald-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-solid fa-shield-halved text-emerald-300 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">Fortinet Certified Fundamentals</div>
+                                <div class="text-xs text-slate-300">Fundamentals in Cybersecurity (FCF)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20FCF.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20FCF.pdf" download="Yegana Karimli FCF.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 flex items-start gap-3.5">
-                        <i class="fa-brands fa-linux text-amber-300 text-xl mt-0.5"></i>
-                        <div>
-                            <div class="font-bold text-white text-sm">RH124 &amp; RH134</div>
-                            <div class="text-xs text-slate-300">Red Hat System Administration I &amp; II</div>
+                    <!-- RH124 -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-amber-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-brands fa-linux text-amber-300 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">Red Hat RH124</div>
+                                <div class="text-xs text-slate-300">Red Hat System Administration I</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20RH124.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20RH124.pdf" download="Yegana Karimli RH124.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 flex items-start gap-3.5 sm:col-span-2">
-                        <i class="fa-solid fa-certificate text-purple-300 text-xl mt-0.5"></i>
-                        <div>
-                            <div class="font-bold text-white text-sm">Certiport — Information Technology Specialist</div>
-                            <div class="text-xs text-slate-300">Beynəlxalq İT Mütəxəssis Sertifikatı</div>
+                    <!-- RH134 -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-amber-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-brands fa-linux text-amber-300 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">Red Hat RH134</div>
+                                <div class="text-xs text-slate-300">Red Hat System Administration II</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20RH%20134.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20RH%20134.pdf" download="Yegana Karimli RH 134.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certiport ITS -->
+                    <div class="p-4 rounded-xl bg-cardbg border border-slate-600/80 hover:border-purple-400/50 transition flex flex-col justify-between gap-3.5 glow-border">
+                        <div class="flex items-start gap-3.5">
+                            <i class="fa-solid fa-certificate text-purple-300 text-xl mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white text-sm">Certiport — İTS</div>
+                                <div class="text-xs text-slate-300">Information Technology Specialist</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 border-t border-slate-600/60 font-mono text-xs">
+                            <a href="Yegana%20Karimli%20%C4%B0TS.pdf" target="_blank" rel="noopener noreferrer" class="flex-1 py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-regular fa-eye text-cyan-300"></i>
+                                <span>Bax</span>
+                            </a>
+                            <a href="Yegana%20Karimli%20%C4%B0TS.pdf" download="Yegana Karimli İTS.pdf" class="flex-1 py-1.5 px-2.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-200 text-center transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download"></i>
+                                <span>PDF Yüklə</span>
+                            </a>
                         </div>
                     </div>
                 </div>
