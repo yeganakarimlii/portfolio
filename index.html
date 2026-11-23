@@ -105,7 +105,7 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="haqqimda" class="pt-12 pb-14 md:pt-16 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="haqqimda" class="pt-12 pb-20 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-xs font-mono">
@@ -123,7 +123,7 @@
                 </div>
 
                 <p class="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    Linux (<span class="text-white font-semibold">RHEL</span>) və <span class="text-white font-semibold">Windows Server</span> sistemlərinin idarə olunması, Active Directory və Group Policy sazlanması, şəbəkə təhlükəsizliyi (<span class="text-white font-semibold">FortiGate, pfSense, Nmap</span>), konteynerləşdirmə (<span class="text-white font-semibold">Docker</span>), veb/mail serverlər (<span class="text-white font-semibold">NGINX, IIS, Postfix</span>) və IP telefoniya (<span class="text-white font-semibold">Yeastar PBX</span>) üzrə təcrübə.
+                    Linux (<span class="text-white font-semibold">RHEL</span>) və <span class="text-white font-semibold">Windows Server</span> sistemlərinin idarə olunması, Active Directory və Group Policy sazlanması, şəbəkə təhlükəsizliyi (<span class="text-white font-semibold">FortiGate, pfSense, Site-to-Site &amp; Remote Access VPN, Port Forwarding, Nmap</span>), konteynerləşdirmə (<span class="text-white font-semibold">Docker</span>), veb/mail serverlər (<span class="text-white font-semibold">NGINX, IIS, Postfix</span>) və IP telefoniya (<span class="text-white font-semibold">Yeastar PBX</span>) üzrə təcrübə.
                 </p>
 
                 <div class="flex flex-wrap gap-2.5 pt-1">
@@ -171,16 +171,16 @@
                             <span class="text-emerald-400">root@infra:~#</span> <span class="text-white">whoami</span>
                             <div class="mt-1 text-cyan-200 pl-2 border-l-2 border-cyan-400/60">
                                 Yeganə Kərimli — Kiçik Sistem Administratoru @ NEO BOKT ASC<br>
-                                Fokus: RHEL Linux, Windows AD/GPO, FortiGate, Docker, NGINX, Postfix
+                                Fokus: RHEL Linux, Windows AD/GPO, FortiGate (VPN/NAT), Docker, NGINX, Postfix
                             </div>
                         </div>
                     </div>
 
                     <div class="px-3 py-2.5 bg-[#1e2c45] border-t border-slate-600/70 flex flex-wrap gap-1.5">
                         <button onclick="runCommand('ls projects/')" class="px-2.5 py-1 rounded bg-slate-700/90 hover:bg-cyan-500/25 hover:text-cyan-200 border border-slate-500/70 text-xs font-mono text-slate-100 transition">ls projects/</button>
+                        <button onclick="runCommand('get-vpn-nat')" class="px-2.5 py-1 rounded bg-slate-700/90 hover:bg-cyan-500/25 hover:text-cyan-200 border border-slate-500/70 text-xs font-mono text-slate-100 transition">get-vpn-nat</button>
                         <button onclick="runCommand('get-gpo')" class="px-2.5 py-1 rounded bg-slate-700/90 hover:bg-cyan-500/25 hover:text-cyan-200 border border-slate-500/70 text-xs font-mono text-slate-100 transition">get-gpo</button>
                         <button onclick="runCommand('status postfix')" class="px-2.5 py-1 rounded bg-slate-700/90 hover:bg-cyan-500/25 hover:text-cyan-200 border border-slate-500/70 text-xs font-mono text-slate-100 transition">status postfix</button>
-                        <button onclick="runCommand('cat certs.txt')" class="px-2.5 py-1 rounded bg-slate-700/90 hover:bg-cyan-500/25 hover:text-cyan-200 border border-slate-500/70 text-xs font-mono text-slate-100 transition">cat certs.txt</button>
                     </div>
 
                     <form id="terminalForm" class="px-4 py-2.5 bg-[#151f31] border-t border-slate-600/70 flex items-center gap-2 font-mono text-xs sm:text-sm">
@@ -188,56 +188,6 @@
                         <input id="terminalInput" type="text" placeholder="help yazın..." autocomplete="off" class="w-full bg-transparent text-white focus:outline-none placeholder-slate-400">
                     </form>
                 </div>
-            </div>
-        </div>
-
-        <!-- HR Quick Snapshot Bar -->
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="rounded-xl bg-[#1b273d]/95 border border-slate-600/80 p-4 flex items-center gap-3.5 glow-border transition">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-400/35 text-emerald-300 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-briefcase"></i>
-                </div>
-                <div>
-                    <div class="text-xs font-mono text-slate-400">Cari Rol</div>
-                    <div class="text-sm font-bold text-white">NEO BOKT ASC</div>
-                    <div class="text-xs text-emerald-300">Kiçik Sistem Administratoru</div>
-                </div>
-            </div>
-
-            <div class="rounded-xl bg-[#1b273d]/95 border border-slate-600/80 p-4 flex items-center gap-3.5 glow-border transition">
-                <div class="w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-400/35 text-cyan-300 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <div>
-                    <div class="text-xs font-mono text-slate-400">Beynəlxalq Sertifikatlar</div>
-                    <div class="text-sm font-bold text-white">RHCSA &amp; FCA (7.4)</div>
-                    <div class="text-xs text-cyan-300">RH124/134, FCF, Certiport</div>
-                </div>
-            </div>
-
-            <div class="rounded-xl bg-[#1b273d]/95 border border-slate-600/80 p-4 flex items-center gap-3.5 glow-border transition">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/15 border border-amber-400/35 text-amber-300 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div>
-                    <div class="text-xs font-mono text-slate-400">Təhsil &amp; Diplom</div>
-                    <div class="text-sm font-bold text-white">BDU • Code Academy</div>
-                    <div class="text-xs text-amber-300">Honour Degree (Cybersecurity)</div>
-                </div>
-            </div>
-
-            <div class="rounded-xl bg-[#1b273d]/95 border border-slate-600/80 p-4 flex items-center justify-between gap-3 glow-border transition">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-purple-500/15 border border-purple-400/35 text-purple-300 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-folder-open"></i>
-                    </div>
-                    <div>
-                        <div class="text-xs font-mono text-slate-400">Sübutlu Case-lər</div>
-                        <div class="text-sm font-bold text-white">4 Real Ssenari</div>
-                        <div class="text-xs text-purple-300">AD, GPO, Docker, NGINX</div>
-                    </div>
-                </div>
-                <a href="#layiheler" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 underline shrink-0">Keç</a>
             </div>
         </div>
     </section>
@@ -249,7 +199,7 @@
                 <span class="text-cyan-300 font-mono text-xs uppercase tracking-wider">// Praktiki Təcrübə &amp; İcra</span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Real İnfrastruktur Case Study-ləri</h2>
                 <p class="text-slate-300 mt-2 max-w-2xl text-sm sm:text-base">
-                    İstehsalat və laboratoriya mühitlərində icra olunmuş sistem idarəetməsi, təhlükəsizlik siyasətləri və xidmət qurulmaları.
+                    İstehsalat və laboratoriya mühitlərində icra olunmuş sistem idarəetməsi, firewall/VPN sazlamaları və xidmət qurulmaları.
                 </p>
             </div>
 
@@ -429,36 +379,37 @@
                 <div>
                     <div class="flex items-center justify-between gap-2 mb-4">
                         <span class="px-3 py-1 rounded-md bg-purple-500/15 border border-purple-400/40 text-purple-200 text-xs font-mono">
-                            Firewall, Audit &amp; VoIP
+                            Firewall, VPN, NAT &amp; VoIP
                         </span>
                         <span class="text-xs font-mono text-slate-300">CASE #04</span>
                     </div>
 
                     <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
-                        FortiGate 7.4 Firewall, Nmap Auditi və Yeastar PBX İnteqrasiyası
+                        Firewall VPN (Site-to-Site &amp; Remote Access), Port Forwarding və Nmap/PBX
                     </h3>
 
                     <div class="space-y-3 text-sm text-slate-200 leading-relaxed">
                         <p>
-                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Şəbəkə trafikinin nəzarətdə saxlanılması, açıq port və xidmətlərin yoxlanılması, həmçinin daxili IP telefoniya rabitəsinin sabit işləməsi.
+                            <strong class="text-cyan-300 font-mono text-xs uppercase">Problem:</strong> Filiallar və uzaq əməkdaşlar arasında şifrələnmiş VPN bağlantılarının qurulması, daxili servislərə təhlükəsiz Port Forwarding və şəbəkə/telefoniya sabitliyinin təmin edilməsi.
                         </p>
                         <p>
-                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-semibold">FortiGate</span> və <span class="text-white font-semibold">pfSense</span> firewall qaydaları sazlandı, <span class="text-white font-semibold">Nmap</span> ilə şəbəkə skan/audit işləri aparıldı və <span class="text-white font-semibold">Yeastar PBX</span> IP telefoniya sistemi konfiqurasiya edildi.
+                            <strong class="text-emerald-300 font-mono text-xs uppercase">Həll &amp; İcra:</strong> <span class="text-white font-semibold">FortiGate</span> və <span class="text-white font-semibold">pfSense</span> firewall-larında <span class="text-white font-semibold">Site-to-Site VPN</span> (IPsec) və <span class="text-white font-semibold">Remote Access VPN</span> (SSL/IPsec) sazlandı, <span class="text-white font-semibold">Port Forwarding (Virtual IP / DNAT)</span> qaydaları yaradıldı, <span class="text-white font-semibold">Nmap</span> auditi və <span class="text-white font-semibold">Yeastar PBX</span> konfiqurasiyası icra edildi.
                         </p>
                     </div>
 
-                    <div class="mt-5 p-4 rounded-xl bg-[#162032] border border-slate-600/70 font-mono text-xs text-slate-200 space-y-1">
-                        <div><span class="text-purple-300">●</span> FortiGate 7.4 Policy &amp; Access Control</div>
-                        <div><span class="text-cyan-300">●</span> Nmap Port &amp; Service Discovery Audit</div>
-                        <div><span class="text-emerald-300">●</span> Yeastar PBX Extension &amp; Call Routing</div>
+                    <div class="mt-5 p-4 rounded-xl bg-[#162032] border border-slate-600/70 font-mono text-xs text-slate-200 space-y-1.5">
+                        <div><span class="text-purple-300">●</span> Site-to-Site VPN (IPsec Tunnel — Filial/Mərkəz)</div>
+                        <div><span class="text-cyan-300">●</span> Remote Access VPN (SSL VPN / IPsec Client)</div>
+                        <div><span class="text-amber-300">●</span> Port Forwarding (Virtual IP / DNAT &amp; Firewall Policy)</div>
+                        <div><span class="text-emerald-300">●</span> Nmap Audit &amp; Yeastar PBX Extension Routing</div>
                     </div>
                 </div>
 
                 <div class="mt-6 pt-4 border-t border-slate-600/70 flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-1.5 font-mono text-xs">
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">FortiGate 7.4</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">Nmap</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">Yeastar PBX</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">Site-to-Site VPN</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">Remote Access VPN</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-600/70">Port Forwarding</span>
                     </div>
                     <button onclick="openCaseModal('case4')" class="text-xs font-mono text-cyan-300 hover:text-cyan-200 flex items-center gap-1.5 font-semibold">
                         <span>Texniki Detallar</span>
@@ -488,8 +439,8 @@
                             <i class="fa-solid fa-fire-flame-curved"></i>
                         </div>
                         <div>
-                            <div class="font-semibold text-white text-sm sm:text-base">1. Perimeter &amp; Firewall (FortiGate / pfSense)</div>
-                            <div class="text-xs text-slate-300 font-mono">Firewall Qaydaları • Nmap Audit • Trafik Nəzarəti</div>
+                            <div class="font-semibold text-white text-sm sm:text-base">1. Perimeter, VPN &amp; Firewall (FortiGate / pfSense)</div>
+                            <div class="text-xs text-slate-300 font-mono">Site-to-Site VPN • Remote Access VPN • Port Forwarding (DNAT)</div>
                         </div>
                     </div>
                     <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
@@ -537,14 +488,14 @@
 
             <div id="nodeInspector" class="lg:col-span-5 rounded-2xl bg-[#1b273d] border border-slate-600/80 p-6">
                 <div class="text-xs font-mono text-cyan-300 uppercase mb-1">Seçilmiş Qovşaq Detalları</div>
-                <h3 id="inspectorTitle" class="text-xl font-bold text-white mb-3">Perimeter &amp; Firewall (FortiGate / pfSense)</h3>
+                <h3 id="inspectorTitle" class="text-xl font-bold text-white mb-3">Perimeter, VPN &amp; Firewall (FortiGate / pfSense)</h3>
                 <p id="inspectorDesc" class="text-sm text-slate-200 leading-relaxed mb-4">
-                    Şəbəkə sərhədində giriş/çıxış siyasətlərinin idarə edilməsi, təhlükəsizlik qaydalarının sazlanması və Nmap vasitəsilə şəbəkə port/xidmət analizinin aparılması.
+                    Şəbəkə sərhədində Site-to-Site VPN tunellərinin və Remote Access VPN bağlantılarının qurulması, daxili servislər üçün Port Forwarding (DNAT/VIP) sazlanması və Nmap ilə şəbəkə auditi.
                 </p>
                 <ul id="inspectorPoints" class="space-y-2 text-xs sm:text-sm text-slate-200 font-mono">
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>FortiGate 7.4 və pfSense konfiqurasiyası</span></li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>Nmap ilə şəbəkə skanlanması və zəiflik təhlili</span></li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>TCP/IP əsaslı şəbəkə axınının nəzarəti</span></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>Site-to-Site VPN (IPsec) &amp; Remote Access VPN</span></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>Port Forwarding (Virtual IP / DNAT) &amp; Firewall Policy</span></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-300">▸</span><span>FortiGate 7.4, pfSense və Nmap port/xidmət analizi</span></li>
                 </ul>
             </div>
         </div>
@@ -577,14 +528,14 @@
                 <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center mb-4">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <h3 class="font-bold text-white text-lg mb-3">Şəbəkə &amp; Təhlükəsizlik</h3>
+                <h3 class="font-bold text-white text-lg mb-3">Şəbəkə, VPN &amp; Təhlükəsizlik</h3>
                 <ul class="space-y-2 text-sm text-slate-200 font-mono">
-                    <li>• FortiGate (7.4 Operator)</li>
-                    <li>• pfSense Firewall</li>
-                    <li>• Nmap Audit &amp; Analiz</li>
-                    <li>• GoPhish Simulasiyası</li>
+                    <li>• FortiGate (7.4 Operator) &amp; pfSense</li>
+                    <li>• Site-to-Site VPN (IPsec)</li>
+                    <li>• Remote Access VPN (SSL/IPsec)</li>
+                    <li>• Port Forwarding (DNAT / VIP)</li>
+                    <li>• Nmap Audit &amp; GoPhish</li>
                     <li>• Postfix Mail Server</li>
-                    <li>• Təhlükəsizlik Siyasətləri</li>
                 </ul>
             </div>
 
@@ -860,9 +811,10 @@
         const terminalInput = document.getElementById('terminalInput');
 
         const commands = {
-            'help': 'Əmrlər: whoami, ls projects/, get-gpo, status postfix, cat certs.txt, clear',
+            'help': 'Əmrlər: whoami, ls projects/, get-vpn-nat, get-gpo, status postfix, cat certs.txt, clear',
             'whoami': 'Yeganə Kərimli — Kiçik Sistem Administratoru @ NEO BOKT ASC',
-            'ls projects/': '01_gophish_postfix_awareness/   02_ad_gpo_hardening/   03_docker_nginx/   04_fortigate_nmap_yeastar/',
+            'ls projects/': '01_gophish_postfix_awareness/   02_ad_gpo_hardening/   03_docker_nginx/   04_vpn_nat_firewall_pbx/',
+            'get-vpn-nat': 'Site-to-Site VPN (IPsec) [UP] | Remote Access VPN (SSL/IPsec) [ACTIVE] | Port Forwarding (DNAT/VIP) [CONFIGURED]',
             'get-gpo': 'Domain: neo.local | OUs: Credit, Finance, HR, IT, PK, RISK, PC, SERVER | GPOs: USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, PASSWORD_POLICY, LOCKSCREEN, WALLPAPER',
             'status postfix': '● postfix.service - Postfix Mail Transport Agent — Active: active (running)',
             'cat certs.txt': 'RHCSA | FCA FortiGate 7.4 Operator | Fortinet Fundamentals | RH124 & RH134 | Certiport IT Specialist'
@@ -914,24 +866,40 @@
 
         const nodeData = {
             perimeter: {
-                title: 'Perimeter & Firewall (FortiGate / pfSense)',
-                desc: 'Şəbəkə sərhədində giriş/çıxış siyasətlərinin idarə edilməsi, təhlükəsizlik qaydalarının sazlanması və Nmap vasitəsilə şəbəkə port/xidmət analizinin aparılması.',
-                points: ['FortiGate 7.4 və pfSense konfiqurasiyası', 'Nmap ilə şəbəkə skanlanması və zəiflik təhlili', 'TCP/IP əsaslı şəbəkə axınının nəzarəti']
+                title: 'Perimeter, VPN & Firewall (FortiGate / pfSense)',
+                desc: 'Şəbəkə sərhədində Site-to-Site VPN tunellərinin və Remote Access VPN bağlantılarının qurulması, daxili servislər üçün Port Forwarding (DNAT/VIP) sazlanması və Nmap ilə şəbəkə auditi.',
+                points: [
+                    'Site-to-Site VPN (IPsec) & Remote Access VPN',
+                    'Port Forwarding (Virtual IP / DNAT) & Firewall Policy',
+                    'FortiGate 7.4, pfSense və Nmap port/xidmət analizi'
+                ]
             },
             windows: {
                 title: 'Windows Server & Active Directory (neo.local)',
                 desc: 'Mərkəzləşdirilmiş domen idarəetməsi, şöbələr üzrə OU strukturu, Group Policy təhlükəsizlik qaydaları və şəbəkə paylaşımlarının qurulması.',
-                points: ['Active Directory OU və icazə idarəetməsi', 'USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, LOCKSCREEN GPO', 'DNS, DHCP, DFS share və IIS Manager']
+                points: [
+                    'Active Directory OU və icazə idarəetməsi',
+                    'USB_BLOCK, CMD_BLOCK, POWERSHELL_BLOCK, LOCKSCREEN GPO',
+                    'DNS, DHCP, DFS share və IIS Manager'
+                ]
             },
             linux: {
                 title: 'RHEL Linux, Docker, NGINX & Postfix',
                 desc: 'RHCSA standartlarına uyğun Linux server inzibatçılığı, Docker konteynerlərinin idarəsi, NGINX reverse proxy və Postfix mail server xidməti.',
-                points: ['RHEL sistem idarəetməsi (RHCSA)', 'Docker və NGINX Reverse Proxy', 'GoPhish + Postfix SMTP simulasiya mühiti']
+                points: [
+                    'RHEL sistem idarəetməsi (RHCSA)',
+                    'Docker və NGINX Reverse Proxy',
+                    'GoPhish + Postfix SMTP simulasiya mühiti'
+                ]
             },
             voip: {
                 title: 'Yeastar PBX & İstifadəçi Dəstəyi',
                 desc: 'Korporativ IP telefoniya sisteminin sazlanması və əməkdaşların gündəlik iş mühitində (Outlook, 1C, işçi stansiyaları) texniki dəstəyin göstərilməsi.',
-                points: ['Yeastar PBX inteqrasiyası', 'Outlook və 1C korporativ sazlamaları', 'Operativ İT dəstək və nasazlıqların aradan qaldırılması']
+                points: [
+                    'Yeastar PBX inteqrasiyası',
+                    'Outlook və 1C korporativ sazlamaları',
+                    'Operativ İT dəstək və nasazlıqların aradan qaldırılması'
+                ]
             }
         };
 
@@ -1047,9 +1015,15 @@
                 </div>
             `,
             case4: `
-                <div class="text-xs font-mono text-purple-300">CASE #04 • FIREWALL, AUDIT &amp; VOIP</div>
-                <h3 class="text-2xl font-bold text-white">FortiGate 7.4, Nmap və Yeastar PBX</h3>
-                <p>FortiGate/pfSense firewall siyasətləri, Nmap ilə şəbəkə analizi və Yeastar PBX IP telefoniya inteqrasiyası icra olunub.</p>
+                <div class="text-xs font-mono text-purple-300">CASE #04 • FIREWALL, VPN, NAT &amp; VOIP</div>
+                <h3 class="text-2xl font-bold text-white">Site-to-Site VPN, Remote Access VPN, Port Forwarding və Nmap/PBX</h3>
+                <p>FortiGate və pfSense firewall-larında şəbəkə təhlükəsizliyi, uzaq əlaqə və daxili xidmətlərin yönləndirilməsi üzrə əsas ssenarilər:</p>
+                <div class="p-4 rounded-xl bg-[#162032] border border-slate-600/70 space-y-2 text-xs text-slate-200 font-mono">
+                    <div><span class="text-purple-300">▸ Site-to-Site VPN (IPsec):</span> Mərkəz və filiallar arasında şifrələnmiş Phase 1 / Phase 2 tunelləri və static/policy routing.</div>
+                    <div><span class="text-cyan-300">▸ Remote Access VPN:</span> Uzaqdan işləyən əməkdaşlar üçün SSL/IPsec VPN girişi, istifadəçi autentifikasiyası və daxili subnet-lərə icazə qaydaları.</div>
+                    <div><span class="text-amber-300">▸ Port Forwarding (Virtual IP / DNAT):</span> Xarici IP və təyin olunmuş portların daxili serverə (LAN/DMZ) yönləndirilməsi və uyğun firewall policy-lərin sazlanması.</div>
+                    <div><span class="text-emerald-300">▸ Nmap &amp; Yeastar PBX:</span> Port/servis auditi və IP telefoniya daxili nömrə/marşrut sazlamaları.</div>
+                </div>
             `
         };
 
